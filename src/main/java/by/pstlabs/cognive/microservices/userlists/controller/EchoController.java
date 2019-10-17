@@ -1,4 +1,4 @@
-package by.pstlabs.cognive.microservices.lists;
+package by.pstlabs.cognive.microservices.userlists.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Date;
 
 @RestController
-public class ListController {
+public class EchoController {
 
-    @GetMapping("/echo")
+    @GetMapping("/")
     private String echo(){
-        return "I`m alive! Current time is " + new Date();
+        return "I`m alive! Current moment is " + new Date();
     }
+
 }
