@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+//    id 'application'
+    id 'org.springframework.boot' version '2.0.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+}
+
+// for application plugin
+// mainClassName = 'by.pstlabs.cognive.microservices.Starter'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+//
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+//  let`s use specific gradle version
+wrapper {
+    gradleVersion '4.10.3'
+}
