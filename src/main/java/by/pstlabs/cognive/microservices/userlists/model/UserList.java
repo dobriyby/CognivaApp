@@ -3,16 +3,16 @@ package by.pstlabs.cognive.microservices.userlists.model;
 /**
  * @author Stepan Novikov
  */
-public class UserList {
+public class Userlist {
 
     private int id;
     private String name;
 
-    public UserList(int id) {
+    public Userlist(int id) {
         this(id, "no name");
     }
 
-    public UserList(int id, String name){
+    public Userlist(int id, String name){
         this.id = id;
         this.name = name;
     }

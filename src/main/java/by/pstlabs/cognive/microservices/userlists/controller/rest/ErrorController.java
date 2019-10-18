@@ -1,4 +1,4 @@
-package by.pstlabs.cognive.microservices.userlists.controller;
+package by.pstlabs.cognive.microservices.userlists.controller.rest;
 import by.pstlabs.cognive.microservices.userlists.model.ErrorInfo;
 
 import org.slf4j.Logger;
