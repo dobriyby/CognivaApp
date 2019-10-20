@@ -1,12 +1,11 @@
 package by.pstlabs.cognive.microservices.notifications.controller.rest;
 
-import by.pstlabs.cognive.microservices.notifications.exception.UnableToSendNotificationException;
-import by.pstlabs.cognive.microservices.notifications.exception.UserBannedNotificationsException;
-import by.pstlabs.cognive.microservices.notifications.exception.UserNotFoundException;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import by.pstlabs.cognive.microservices.notifications.service.MailerSenderService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.NonNullApi;
+import org.springframework.web.bind.annotation.*;
+
 
 /**
  * @author Bahdan Prykhodzka
@@ -15,17 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class NotificationController {
 
-    //Created to test exception handler
-    @RequestMapping("testEx")
-    public String test(@RequestParam int id) {
-        switch (id) {
-            case (1):
-                throw new UnableToSendNotificationException("Message, Unable to Send Notification exception", HttpStatus.FORBIDDEN);
-            case (2):
-                throw new UserBannedNotificationsException("Message, User banned notification exception", HttpStatus.BAD_GATEWAY);
-            case (3):
-                throw new UserNotFoundException("Message, User not found exception", HttpStatus.NOT_FOUND);
-        }
-        return "no exception";
+    @Autowired
+    private MailerSenderService mailerSender;
+
+    @PostMapping("/SendMailTest")
+    public String sendMailTest(@RequestParam String mailReceiver,
+                               @RequestParam String receiverName,
+                               @RequestParam String text) {
+        return mailerSender.SendMail(mailReceiver, receiverName, text);
     }
 }

@@ -11,6 +11,11 @@ public class UserNotFoundException extends RuntimeException implements Exception
 
     private ApiError apiError = new ApiError();
 
+    public UserNotFoundException(){
+        apiError.setMessage("User not found");
+        apiError.setStatus(HttpStatus.NOT_FOUND);
+    }
+
     public UserNotFoundException(String message, HttpStatus status) {
         apiError.setMessage(message);
         apiError.setStatus(status);

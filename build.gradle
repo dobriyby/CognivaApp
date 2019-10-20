@@ -16,6 +16,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.data:spring-data-commons'
+    compile group: 'org.simplejavamail', name: 'simple-java-mail', version: '5.0.0'
+    compile group: 'net.markenwerk', name: 'utils-mail-dkim', version: '1.0.1'
+
 //
 //    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

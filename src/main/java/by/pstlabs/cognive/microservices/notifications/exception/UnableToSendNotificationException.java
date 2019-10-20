@@ -11,6 +11,11 @@ public class UnableToSendNotificationException extends RuntimeException implemen
 
     private ApiError apiError = new ApiError();
 
+    public UnableToSendNotificationException() {
+        apiError.setMessage("Unable to send notification");
+        apiError.setStatus(HttpStatus.BAD_GATEWAY);
+    }
+
     public UnableToSendNotificationException(String message, HttpStatus status) {
         apiError.setMessage(message);
         apiError.setStatus(status);

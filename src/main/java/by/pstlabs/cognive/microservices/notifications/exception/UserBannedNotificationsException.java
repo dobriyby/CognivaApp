@@ -11,6 +11,11 @@ public class UserBannedNotificationsException extends RuntimeException implement
 
     private ApiError apiError = new ApiError();
 
+    public UserBannedNotificationsException(){
+        apiError.setMessage("User banned notification");
+        apiError.setStatus(HttpStatus.BAD_REQUEST);
+    }
+
     public UserBannedNotificationsException(String message, HttpStatus status) {
         apiError.setMessage(message);
         apiError.setStatus(status);
