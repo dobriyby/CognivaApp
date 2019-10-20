@@ -34,4 +34,17 @@ public class UserlistServiceRemote implements UserlistService{
     public Iterable<Userlist> getUserlists() throws Exception {
         return null;
     }
+    
+    @Override
+	public String createUser(String name) throws Exception {
+		return name;
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getUserById(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

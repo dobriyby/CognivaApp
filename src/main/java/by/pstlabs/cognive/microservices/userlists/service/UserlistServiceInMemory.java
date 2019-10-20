@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * {@link by.pstlabs.cognive.microservices.userlists.service.UserlistService} implementation that stores data in memory
@@ -49,5 +50,18 @@ public class UserlistServiceInMemory implements UserlistService {
     public Iterable<Userlist> getUserlists() throws Exception {
         return userLists.values();
     }
+
+	@Override
+	public String createUser(String name) throws Exception {
+		return name;
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getUserById(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

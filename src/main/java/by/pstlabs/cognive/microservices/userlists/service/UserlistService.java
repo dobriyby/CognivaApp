@@ -14,4 +14,8 @@ public interface UserlistService {
     Userlist getUserlist(int personId) throws Exception;
 
     Iterable<Userlist> getUserlists() throws Exception;
+    
+    String createUser(String name) throws Exception;
+    
+    String getUserById(int id) throws Exception;
 }

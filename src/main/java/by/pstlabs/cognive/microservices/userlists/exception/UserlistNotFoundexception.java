@@ -6,10 +6,10 @@ package by.pstlabs.cognive.microservices.userlists.exception;
  */
 public class UserlistNotFoundexception extends RuntimeException {
 
-    private final int userlistId;
+    private final long userlistId;
 
-    public UserlistNotFoundexception(int userlistId) {
-        this.userlistId = userlistId;
+    public UserlistNotFoundexception(long listId) {
+        this.userlistId = listId;
     }
 
     @Override

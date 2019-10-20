@@ -19,7 +19,7 @@ public class UserlistController implements LifecycleLoggedBean {
     public final UserlistService listService;
 
     @Autowired
-    public UserlistController(@Qualifier("userlistServiceInMemory") UserlistService listService) {
+    public UserlistController(@Qualifier("userlistServiceDatabase") UserlistService listService) {
         this.listService = listService;
     }
 
@@ -36,6 +36,16 @@ public class UserlistController implements LifecycleLoggedBean {
     @GetMapping(value = "")
     public Iterable<Userlist> getUserlists() throws Exception {
         return listService.getUserlists();
+    }
+    
+    @GetMapping(value = "/createuser/{name}")
+    public String createUser(@PathVariable String name) throws Exception {
+    	return listService.createUser(name);
+    }
+    
+    @GetMapping(value = "/getuserbyid/{id}")
+    public String createUser(@PathVariable int id) throws Exception {
+    	return listService.getUserById(id);
     }
 
 
