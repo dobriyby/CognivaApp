@@ -7,7 +7,7 @@ import org.simplejavamail.mailer.Mailer;
 import org.simplejavamail.mailer.MailerBuilder;
 import org.simplejavamail.mailer.config.TransportStrategy;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
+
 
 import javax.annotation.PostConstruct;
 
@@ -17,6 +17,8 @@ import javax.annotation.PostConstruct;
 
 
 public class MailerSender implements MailerSenderService {
+
+
 
     private Mailer mailer;
 

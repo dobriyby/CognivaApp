@@ -14,7 +14,7 @@ public class ApiError {
     private HttpStatus status;
     private String message;
     private List<String> errors;
-    private Date errorDate = new Date();
+    private String errorDate = new Date().toString();
 
     public ApiError() {
     }
@@ -45,7 +45,7 @@ public class ApiError {
         return errors;
     }
 
-    public Date getErrorDate() {
+    public String getErrorDate() {
         return errorDate;
     }
 
