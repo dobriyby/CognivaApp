@@ -5,6 +5,9 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 // for application plugin
 // mainClassName = 'by.pstlabs.cognive.microservices.Starter'
 
@@ -13,16 +16,15 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.data:spring-data-commons'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.2.0.RELEASE'
-    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.1'
-    compile group: 'org.simplejavamail', name: 'simple-java-mail', version: '5.0.0'
-    compile group: 'net.markenwerk', name: 'utils-mail-dkim', version: '1.0.1'
+    implementation group: 'org.springframework.boot',   name: 'spring-boot-dependencies',       version: '2.0.5.RELEASE'
+    implementation group: 'org.springframework.boot',   name: 'spring-boot-starter-web'
+    implementation group: 'org.springframework.data',   name: 'spring-data-commons'
+    implementation group: 'org.springframework.boot',   name: 'spring-boot-starter-data-jpa',   version: '2.2.0.RELEASE'
+    implementation group: 'org.postgresql',             name: 'postgresql',                     version: '42.1.1'
+    implementation 'javax.xml.bind:jaxb-api:2.3.0' // this should be built-in in Java 8 but somehow is missing
 
-//
-//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation group: 'org.simplejavamail',         name: 'simple-java-mail',               version: '5.0.0'
+    implementation group: 'net.markenwerk',             name: 'utils-mail-dkim',                version: '1.0.1'
 }
 
 //  let`s use specific gradle version

@@ -32,7 +32,7 @@ public class UserService {
 
     public User createUser(Long listsId,User user) throws ResourceNotFoundException {
         return listsRepository.findById(listsId).map(list -> {
-            user.setUserlist(list);
+            user.setLists(list);
             return userRepository.save(user);
         }).orElseThrow(() -> new ResourceNotFoundException("ListsId " + listsId + " not found"));
     }

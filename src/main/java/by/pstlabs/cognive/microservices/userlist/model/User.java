@@ -51,11 +51,11 @@ public class User {
         this.name = name;
     }
 
-    public Lists getUserlist() {
+    public Lists getLists() {
         return lists;
     }
 
-    public void setUserlist(Lists userlist) {
+    public void setLists(Lists userlist) {
         this.lists = userlist;
     }
 
