@@ -1,6 +1,7 @@
 package by.pstlabs.cognive.microservices.userlist.service;
 
 import by.pstlabs.cognive.microservices.userlist.exception.ResourceNotFoundException;
+import by.pstlabs.cognive.microservices.userlist.model.Lists;
 import by.pstlabs.cognive.microservices.userlist.model.User;
 import by.pstlabs.cognive.microservices.userlist.repository.ListsRepository;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
@@ -28,6 +29,14 @@ public class UserService {
 
     public List<User> getAllUserByListsId(Long listsId) {
         return userRepository.findByListsId(listsId);
+    }
+
+    public User createUserByNameAndEmail(String name,String email) {
+        User user = new User();
+        user.setEmail(email);
+        user.setName(name);
+        user.setLists(listsRepository.findAll().get(0));
+        return userRepository.save(user);
     }
 
     public User createUser(Long listsId,User user) throws ResourceNotFoundException {

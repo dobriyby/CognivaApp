@@ -1,5 +1,7 @@
 package by.pstlabs.cognive.microservices.userlist.model;
 
+import by.pstlabs.cognive.microservices.notifications.model.Push;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -26,6 +28,7 @@ public class Lists {
 
     @OneToMany(mappedBy = "lists", cascade = CascadeType.ALL)
     private Set<User> userSet = new HashSet<>();
+
 
     public Lists() {
     }
@@ -66,6 +69,7 @@ public class Lists {
                 ", typeOfList=" + title +
                 '}';
     }
+
 
 
 }

@@ -51,6 +51,12 @@ public class UserController {
         return HttpStatus.OK;
     }
 
+    @PostMapping("/user/create")
+    public HttpStatus createUser(@RequestParam String name, @RequestParam String email){
+        userService.createUserByNameAndEmail(name, email);
+        return  HttpStatus.OK;
+    }
+
 
 
 }
