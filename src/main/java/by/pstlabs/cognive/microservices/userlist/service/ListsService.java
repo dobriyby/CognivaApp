@@ -1,5 +1,6 @@
 package by.pstlabs.cognive.microservices.userlist.service;
 
+import by.pstlabs.cognive.common.model.User;
 import by.pstlabs.cognive.microservices.userlist.exception.ResourceNotFoundException;
 import by.pstlabs.cognive.microservices.userlist.model.Lists;
 import by.pstlabs.cognive.microservices.userlist.repository.ListsRepository;
@@ -42,8 +43,9 @@ public class ListsService {
         }).orElseThrow(() -> new ResourceNotFoundException("ListsId " + listsId + " not found"));
     }
 
-
-
-
-
+    public boolean isUserInList(Long listsId, User user) throws ResourceNotFoundException {
+        return listsRepository.findById(listsId).map((list) -> {
+            return list.getUserSet().contains(user);
+        }).orElseThrow(() -> new ResourceNotFoundException("ListsId " + listsId + " not found"));
+    }
 }
