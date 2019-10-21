@@ -1,5 +1,6 @@
-package by.pstlabs.cognive.microservices.userlist.model;
+package by.pstlabs.cognive.common.model;
 
+import by.pstlabs.cognive.microservices.userlist.model.Lists;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -22,18 +23,22 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "lists_id")
-    @JsonIgnore
-    private Lists lists;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "lists_id")
+//    @JsonIgnore
+//    private Lists lists;
 
     public User() {
     }
 
-    public User(String name, Lists lists) {
+    public User(String name){
         this.name = name;
-        this.lists = lists;
     }
+
+//    public User(String name, Lists lists) {
+//        this.name = name;
+//        this.lists = lists;
+//    }
 
     public Long getId() {
         return id;
@@ -51,20 +56,20 @@ public class User {
         this.name = name;
     }
 
-    public Lists getLists() {
-        return lists;
-    }
-
-    public void setLists(Lists userlist) {
-        this.lists = userlist;
-    }
+//    public Lists getLists() {
+//        return lists;
+//    }
+//
+//    public void setLists(Lists userlist) {
+//        this.lists = userlist;
+//    }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", userlist=" + lists +
+                //", userlist=" + lists +
                 '}';
     }
 }

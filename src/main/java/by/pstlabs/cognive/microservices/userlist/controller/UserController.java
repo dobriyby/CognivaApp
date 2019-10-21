@@ -2,7 +2,7 @@ package by.pstlabs.cognive.microservices.userlist.controller;
 
 
 import by.pstlabs.cognive.microservices.userlist.exception.ResourceNotFoundException;
-import by.pstlabs.cognive.microservices.userlist.model.User;
+import by.pstlabs.cognive.common.model.User;
 import by.pstlabs.cognive.microservices.userlist.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -24,7 +24,8 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/lists/{listsId}/users")
-    public ResponseEntity<List<User>> getAllUsersByListsId(@PathVariable (value = "listsId") Long listsId) {
+    public ResponseEntity<List<User>> getAllUsersByListsId(
+                                @PathVariable (value = "listsId") Long listsId) throws ResourceNotFoundException {
         List<User> users = userService.getAllUserByListsId(listsId);
         return new ResponseEntity<>(users, new HttpHeaders(), HttpStatus.OK);
     }

@@ -1,7 +1,7 @@
 package by.pstlabs.cognive.microservices.userlist.service;
 
 import by.pstlabs.cognive.microservices.userlist.exception.ResourceNotFoundException;
-import by.pstlabs.cognive.microservices.userlist.model.User;
+import by.pstlabs.cognive.common.model.User;
 import by.pstlabs.cognive.microservices.userlist.repository.ListsRepository;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,18 +27,21 @@ public class UserService {
     private ListsRepository listsRepository;
 
 
-    public List<User> getAllUserByListsId(Long listsId) {
-        return userRepository.findByListsId(listsId);
+    public List<User> getAllUserByListsId(Long listsId) throws ResourceNotFoundException {
+        return listsRepository.findById(listsId).map(list -> new ArrayList<>(
+                list.getUserSet())).orElseThrow(
+                        () -> new ResourceNotFoundException("List not found with id " + listsId));
     }
 
-    public User createUser(Long listsId,User user) throws ResourceNotFoundException {
+    public User createUser(Long listsId, User user) throws ResourceNotFoundException {
         return listsRepository.findById(listsId).map(list -> {
-            user.setLists(list);
+            list.addUser(user);
+//            user.setLists(list);
             return userRepository.save(user);
         }).orElseThrow(() -> new ResourceNotFoundException("ListsId " + listsId + " not found"));
     }
 
-    public User updateUser(Long listsId,Long userId, User userRequest) throws ResourceNotFoundException {
+    public User updateUser(Long listsId, Long userId, User userRequest) throws ResourceNotFoundException {
         if(!listsRepository.existsById(listsId)) {
             throw new ResourceNotFoundException("ListsId " + listsId + " not found");
         }
@@ -50,10 +54,18 @@ public class UserService {
 
 
     public HttpStatus deleteUser(Long listsId, Long userId) throws ResourceNotFoundException {
-        return userRepository.findByIdAndListsId(userId, listsId).map(user -> {
-            userRepository.delete(user);
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + userId));
+        return listsRepository.findById(listsId).map(list -> {
+            list.deleteUser(user);
+            listsRepository.save(list);
             return HttpStatus.OK;
-        }).orElseThrow(() -> new ResourceNotFoundException("User not found with id " + userId + " and listsId " + listsId));
+        }).orElseThrow(() -> new ResourceNotFoundException("List not found with id " + listsId));
+
+//        return userRepository.findByIdAndListsId(userId, listsId).map(user -> {
+//            userRepository.delete(user);
+//            return HttpStatus.OK;
+//        }).orElseThrow(() -> new ResourceNotFoundException("User not found with id " + userId + " and listsId " + listsId));
     }
 
 
