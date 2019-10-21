@@ -1,10 +1,10 @@
 package by.pstlabs.cognive.microservices.notifications.controller;
 
-import by.pstlabs.cognive.microservices.notifications.exception.ExceptionSignature;
+import by.pstlabs.cognive.microservices.notifications.model.ResponseSignature;
 import by.pstlabs.cognive.microservices.notifications.exception.UnableToSendNotificationException;
 import by.pstlabs.cognive.microservices.notifications.exception.UserBannedNotificationsException;
 import by.pstlabs.cognive.microservices.notifications.exception.UserNotFoundException;
-import by.pstlabs.cognive.microservices.notifications.model.ApiError;
+import by.pstlabs.cognive.microservices.notifications.model.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
@@ -32,21 +32,21 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
     //Default exception handler
     @ExceptionHandler({Exception.class})
     public ResponseEntity<Object> handleAll(Exception ex) {
-        ApiError apiError = new ApiError(
-                HttpStatus.INTERNAL_SERVER_ERROR, ex.getLocalizedMessage(), "INTERNAL_SERVER_ERROR");
-        logger.error(apiError.toString());
+        ApiResponse apiResponse = new ApiResponse(
+                HttpStatus.INTERNAL_SERVER_ERROR, ex.getLocalizedMessage(), -1,"INTERNAL_SERVER_ERROR");
+        logger.error(apiResponse.toString());
         return new ResponseEntity<>(
-                apiError, new HttpHeaders(), apiError.getStatus());
+                apiResponse, new HttpHeaders(), apiResponse.getStatus());
     }
 
     //UserExceptionHandler
     @ExceptionHandler({UserNotFoundException.class,
             UserBannedNotificationsException.class,
             UnableToSendNotificationException.class})
-    public ResponseEntity<Object> handleUserNotFoundException(ExceptionSignature ex) {
-        logger.error(ex.getException().toString());
+    public ResponseEntity<Object> handleUserNotFoundException(ResponseSignature ex) {
+        logger.error(ex.getResponse().toString());
         return new ResponseEntity<>(
-                ex.getException(), new HttpHeaders(), ex.getException().getStatus());
+                ex.getResponse(), new HttpHeaders(), ex.getResponse().getStatus());
     }
 
     @ExceptionHandler({MethodArgumentTypeMismatchException.class})
@@ -54,11 +54,11 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
             MethodArgumentTypeMismatchException ex) {
         String error =
                 ex.getName() + " should be of type " + Objects.requireNonNull(ex.getRequiredType()).getName();
-        ApiError apiError =
-                new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
-        logger.error(apiError.toString());
+        ApiResponse apiResponse =
+                new ApiResponse(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), -1, error);
+        logger.error(apiResponse.toString());
         return new ResponseEntity<>(
-                apiError, new HttpHeaders(), apiError.getStatus());
+                apiResponse, new HttpHeaders(), apiResponse.getStatus());
     }
 
     @Override
@@ -68,11 +68,11 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
             @NonNull HttpStatus status,
             @NonNull WebRequest request) {
         String error = ex.getParameterName() + " parameter is missing";
-        ApiError apiError =
-                new ApiError(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(), error);
-        logger.error(apiError.toString());
+        ApiResponse apiResponse =
+                new ApiResponse(HttpStatus.BAD_REQUEST, ex.getLocalizedMessage(),-1, error);
+        logger.error(apiResponse.toString());
         return new ResponseEntity<>(
-                apiError, new HttpHeaders(), apiError.getStatus());
+                apiResponse, new HttpHeaders(), apiResponse.getStatus());
     }
 
 }

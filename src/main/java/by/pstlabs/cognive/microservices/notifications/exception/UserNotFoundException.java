@@ -1,29 +1,35 @@
 package by.pstlabs.cognive.microservices.notifications.exception;
 
-import by.pstlabs.cognive.microservices.notifications.model.ApiError;
+import by.pstlabs.cognive.microservices.notifications.model.ApiResponse;
+import by.pstlabs.cognive.microservices.notifications.model.ResponseSignature;
 import org.springframework.http.HttpStatus;
+
+import java.util.List;
 
 /**
  * @author Bahdan Prykhodzka
  */
 
-public class UserNotFoundException extends RuntimeException implements ExceptionSignature {
+public class UserNotFoundException extends RuntimeException implements ResponseSignature {
 
-    private ApiError apiError = new ApiError();
+    private ApiResponse apiResponse = new ApiResponse();
 
     public UserNotFoundException(){
-        apiError.setMessage("User not found");
-        apiError.setStatus(HttpStatus.NOT_FOUND);
+        apiResponse.setCode(-1);
+        apiResponse.setMessage("User not found");
+        apiResponse.setStatus(HttpStatus.NOT_FOUND);
     }
 
-    public UserNotFoundException(String message, HttpStatus status) {
-        apiError.setMessage(message);
-        apiError.setStatus(status);
+    public UserNotFoundException(HttpStatus status, String message, int code, List<String> errors) {
+        apiResponse.setStatus(status);
+        apiResponse.setMessage(message);
+        apiResponse.setCode(code);
+        apiResponse.setErrors(errors);
     }
 
     @Override
-    public ApiError getException() {
-        return apiError;
+    public ApiResponse getResponse() {
+        return apiResponse;
     }
 }
 
