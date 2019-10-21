@@ -35,6 +35,11 @@ public class Lists {
     )
     private Set<User> userSet = new HashSet<>();
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "bank_id")
+//    @JsonIgnore
+    private Bank bank;
+
     public Lists() {
     }
 
