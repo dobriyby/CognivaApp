@@ -30,7 +30,6 @@ public class BankController {
     public ResponseEntity<List<Lists>> getAllListsByBankId(
             @PathVariable(value = "bankId") Long bankId) throws ResourceNotFoundException{
         return new ResponseEntity<>(bankService.getListsByBankId(bankId), new HttpHeaders(), HttpStatus.OK);
-
     }
 
 }

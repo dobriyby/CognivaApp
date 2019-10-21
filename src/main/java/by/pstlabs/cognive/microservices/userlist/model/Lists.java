@@ -80,6 +80,14 @@ public class Lists {
         this.userSet.remove(user);
     }
 
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
+
 //    public List<User> getUserList() {
 //        return userList;
 //    }
@@ -95,6 +103,5 @@ public class Lists {
                 ", typeOfList=" + title +
                 '}';
     }
-
 
 }

@@ -52,6 +52,10 @@ public class Bank {
         return listsMap.values();
     }
 
+    public void addLists(Lists lists){
+        listsMap.put(lists.getId(), lists);
+    }
+
     @Override
     public String toString() {
         return "Bank{" +
