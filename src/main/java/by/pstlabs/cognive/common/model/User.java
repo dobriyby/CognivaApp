@@ -1,10 +1,10 @@
 package by.pstlabs.cognive.common.model;
 
-import by.pstlabs.cognive.microservices.userlist.model.Lists;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import by.pstlabs.cognive.microservices.notifications.model.Push;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 /**
  * @author Stepan Novikov
@@ -27,6 +27,13 @@ public class User {
 //    @JoinColumn(name = "lists_id")
 //    @JsonIgnore
 //    private Lists lists;
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "users")
+    private Set<Push> users;
+
+    @Column
+    private String email;
+
 
     public User() {
     }
@@ -56,6 +63,14 @@ public class User {
         this.name = name;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 //    public Lists getLists() {
 //        return lists;
 //    }
@@ -63,6 +78,14 @@ public class User {
 //    public void setLists(Lists userlist) {
 //        this.lists = userlist;
 //    }
+
+    public Set<Push> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<Push> users) {
+        this.users = users;
+    }
 
     @Override
     public String toString() {
@@ -72,4 +95,5 @@ public class User {
                 //", userlist=" + lists +
                 '}';
     }
+
 }

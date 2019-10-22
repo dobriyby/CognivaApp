@@ -1,28 +1,34 @@
 package by.pstlabs.cognive.microservices.notifications.exception;
 
-import by.pstlabs.cognive.microservices.notifications.model.ApiError;
+import by.pstlabs.cognive.microservices.notifications.model.ApiResponse;
+import by.pstlabs.cognive.microservices.notifications.model.ResponseSignature;
 import org.springframework.http.HttpStatus;
+
+import java.util.List;
 
 /**
  * @author Bahdan Prykhodzka
  */
 
-public class UnableToSendNotificationException extends RuntimeException implements ExceptionSignature {
+public class UnableToSendNotificationException extends RuntimeException implements ResponseSignature {
 
-    private ApiError apiError = new ApiError();
+    private ApiResponse apiResponse = new ApiResponse();
 
     public UnableToSendNotificationException() {
-        apiError.setMessage("Unable to send notification");
-        apiError.setStatus(HttpStatus.BAD_GATEWAY);
+        apiResponse.setCode(-1);
+        apiResponse.setMessage("Unable to send notification");
+        apiResponse.setStatus(HttpStatus.SERVICE_UNAVAILABLE);
     }
 
-    public UnableToSendNotificationException(String message, HttpStatus status) {
-        apiError.setMessage(message);
-        apiError.setStatus(status);
+    public UnableToSendNotificationException(HttpStatus status, String message, int code, List<String> errors) {
+        apiResponse.setStatus(status);
+        apiResponse.setMessage(message);
+        apiResponse.setCode(code);
+        apiResponse.setErrors(errors);
     }
 
     @Override
-    public ApiError getException() {
-        return apiError;
+    public ApiResponse getResponse() {
+        return apiResponse;
     }
 }

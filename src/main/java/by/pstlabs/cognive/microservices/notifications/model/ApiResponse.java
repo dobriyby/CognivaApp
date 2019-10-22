@@ -10,26 +10,29 @@ import java.util.List;
  * @author Bahdan Prykhodzka
  */
 
-public class ApiError {
+public class ApiResponse {
     private HttpStatus status;
+    private int code;
     private String message;
     private List<String> errors;
-    private Date errorDate = new Date();
+    private String date = new Date().toString();
 
-    public ApiError() {
+    public ApiResponse() {
     }
 
-    public ApiError(HttpStatus status, String message, List<String> errors) {
+    public ApiResponse(HttpStatus status, String message, int code, List<String> errors) {
         super();
         this.status = status;
         this.message = message;
         this.errors = errors;
+        this.code = code;
     }
 
-    public ApiError(HttpStatus status, String message, String error) {
+    public ApiResponse(HttpStatus status, String message, int code, String error) {
         super();
         this.status = status;
         this.message = message;
+        this.code = code;
         errors = Collections.singletonList(error);
     }
 
@@ -45,8 +48,12 @@ public class ApiError {
         return errors;
     }
 
-    public Date getErrorDate() {
-        return errorDate;
+    public String getDate() {
+        return date;
+    }
+
+    public int getCode() {
+        return code;
     }
 
     public void setStatus(HttpStatus status) {
@@ -61,13 +68,18 @@ public class ApiError {
         this.errors = errors;
     }
 
+    public void setCode(int code) {
+        this.code = code;
+    }
+
     @Override
     public String toString() {
-        return "ApiError{" +
+        return "ApiResponse{" +
                 "status=" + status +
+                ", code=" + code +
                 ", message='" + message + '\'' +
                 ", errors=" + errors +
-                ", errorDate=" + errorDate +
+                ", date='" + date + '\'' +
                 '}';
     }
 }

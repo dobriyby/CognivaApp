@@ -4,8 +4,8 @@ import by.pstlabs.cognive.microservices.userlist.exception.ResourceNotFoundExcep
 import by.pstlabs.cognive.common.model.User;
 import by.pstlabs.cognive.microservices.userlist.repository.ListsRepository;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -26,14 +26,21 @@ public class UserService {
     @Autowired
     private ListsRepository listsRepository;
 
-
     public List<User> getAllUserByListsId(Long listsId) throws ResourceNotFoundException {
         return listsRepository.findById(listsId).map(list -> new ArrayList<>(
                 list.getUserSet())).orElseThrow(
                         () -> new ResourceNotFoundException("List not found with id " + listsId));
     }
 
-    public User createUser(Long listsId, User user) throws ResourceNotFoundException {
+    public User createUserByNameAndEmail(String name,String email) {
+        User user = new User();
+        user.setEmail(email);
+        user.setName(name);
+//        user.setLists(listsRepository.findAll().get(0));
+        return userRepository.save(user);
+    }
+
+    public User createUser(Long listsId,User user) throws ResourceNotFoundException {
         return listsRepository.findById(listsId).map(list -> {
             list.addUser(user);
 //            user.setLists(list);

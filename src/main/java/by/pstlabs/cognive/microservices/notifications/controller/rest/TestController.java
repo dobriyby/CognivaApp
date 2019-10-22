@@ -21,7 +21,7 @@ public class TestController {
             case (1):
                 throw new UnableToSendNotificationException();
             case (2):
-                throw new UserBannedNotificationsException("Message, User banned notification exception", HttpStatus.BAD_GATEWAY);
+                throw new UserBannedNotificationsException();
             case (3):
                 throw new UserNotFoundException();
         }
