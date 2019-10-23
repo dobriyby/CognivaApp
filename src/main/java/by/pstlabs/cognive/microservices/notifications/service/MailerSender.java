@@ -53,9 +53,11 @@ public class MailerSender implements MailerSenderService {
 
     @Override
     public ResponseEntity<Object> SendMails(List<MailNotificationRequest> mailNotificationRequestList) {
-        return null;
+        ApiResponse apiResponse =
+                new ApiResponse(HttpStatus.SERVICE_UNAVAILABLE, "", -1, "");
+        return new ResponseEntity<>(
+                apiResponse, new HttpHeaders(), apiResponse.getStatus());
     }
-
 
     private ResponseEntity<Object> send(Email email) {
         try {

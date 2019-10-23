@@ -25,7 +25,6 @@ public class NotificationController {
     private MailerSenderService mailerSender;
 
 
-
     @PostMapping("/sendMail")
     public ResponseEntity<Object> sendMailTest(MailNotificationRequest mailNotificationRequest) {
         return mailerSender.SendMail(mailNotificationRequest);
