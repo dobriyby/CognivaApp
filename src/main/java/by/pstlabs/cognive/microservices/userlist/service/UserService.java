@@ -1,16 +1,14 @@
 package by.pstlabs.cognive.microservices.userlist.service;
 
-import by.pstlabs.cognive.microservices.userlist.exception.ResourceNotFoundException;
+import by.pstlabs.cognive.common.exception.ResourceNotFoundException;
 import by.pstlabs.cognive.common.model.User;
 import by.pstlabs.cognive.microservices.userlist.repository.ListsRepository;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

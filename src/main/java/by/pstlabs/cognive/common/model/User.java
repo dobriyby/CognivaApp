@@ -15,18 +15,13 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
+    protected Long id;
 
+    @Column
     @NotNull
-    @Column(name = "name")
-    private String name;
-
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "lists_id")
-//    @JsonIgnore
-//    private Lists lists;
+    protected String name;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "users")
     private Set<Push> users;
@@ -70,14 +65,6 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
-//    public Lists getLists() {
-//        return lists;
-//    }
-//
-//    public void setLists(Lists userlist) {
-//        this.lists = userlist;
-//    }
 
     public Set<Push> getUsers() {
         return users;

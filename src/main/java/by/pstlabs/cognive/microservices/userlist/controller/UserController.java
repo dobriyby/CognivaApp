@@ -1,7 +1,7 @@
 package by.pstlabs.cognive.microservices.userlist.controller;
 
 
-import by.pstlabs.cognive.microservices.userlist.exception.ResourceNotFoundException;
+import by.pstlabs.cognive.common.exception.ResourceNotFoundException;
 import by.pstlabs.cognive.common.model.User;
 import by.pstlabs.cognive.microservices.userlist.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,7 @@
 package by.pstlabs.cognive.microservices.userlist.model;
 
+import by.pstlabs.cognive.common.model.BaseEntity;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.*;
@@ -10,16 +12,13 @@ import java.util.*;
 
 @Entity
 @Table(name = "bank")
-public class Bank {
+public class Bank extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
-    private Long id;
+    public Bank(){}
 
-    @Column
-    @NotNull
-    private String name;
+    public Bank(String name){
+        this.name = name;
+    }
 
     // @OneToMany(mappedBy = "bank", cascade = CascadeType.ALL)
     @OneToMany

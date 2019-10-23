@@ -52,9 +52,6 @@ public class NotificationController {
 
     @PostMapping("/AddList")
     void addPush(@RequestParam String title, @RequestParam long id) {
-        Lists list = new Lists();
-        list.setId(id);
-        list.setTitle(title);
-        listsService.createLists(list);
+        listsService.create(new Lists(title));
     }
 }

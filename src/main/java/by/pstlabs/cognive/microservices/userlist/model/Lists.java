@@ -1,5 +1,6 @@
 package by.pstlabs.cognive.microservices.userlist.model;
 
+import by.pstlabs.cognive.common.model.BaseEntity;
 import by.pstlabs.cognive.common.model.User;
 
 import javax.persistence.*;
@@ -14,17 +15,13 @@ import java.util.Set;
 
 @Entity
 @Table(name = "userlist")
-public class Lists {
+public class Lists extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    public Lists(){}
 
-    @NotNull
-    @Size(max = 50)
-    @Column(name = "title",unique = true)
-    private String title;
+    public Lists(String name){
+        this.name = name;
+    }
 
     //@OneToMany(mappedBy = "lists", cascade = CascadeType.ALL)
     @OneToMany
@@ -34,35 +31,6 @@ public class Lists {
             inverseJoinColumns = @JoinColumn(name="user_id")
     )
     private Set<User> userSet = new HashSet<>();
-
-//    @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "bank_id")
-////    @JsonIgnore
-//    private Bank bank;
-
-    public Lists() {
-    }
-
-    public Lists(String title) {
-        this.title = title;
-
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public Set<User> getUserSet() {
         return userSet;
@@ -80,27 +48,11 @@ public class Lists {
         this.userSet.remove(user);
     }
 
-//    public Bank getBank() {
-//        return bank;
-//    }
-//
-//    public void setBank(Bank bank) {
-//        this.bank = bank;
-//    }
-
-//    public List<User> getUserList() {
-//        return userList;
-//    }
-//
-//    public void setUserList(List<User> userList) {
-//         this.userList = userList;
-//    }
-
     @Override
     public String toString() {
         return "UserList{" +
                 "id=" + id +
-                ", typeOfList=" + title +
+                ", typeOfList=" + name +
                 '}';
     }
 

@@ -1,4 +1,4 @@
-package by.pstlabs.cognive.microservices.userlist.exception;
+package by.pstlabs.cognive.common.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 

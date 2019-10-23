@@ -1,6 +1,6 @@
 package by.pstlabs.cognive.microservices.userlist.controller;
 
-import by.pstlabs.cognive.microservices.userlist.exception.ResourceNotFoundException;
+import by.pstlabs.cognive.common.exception.ResourceNotFoundException;
 import by.pstlabs.cognive.microservices.userlist.model.Bank;
 import by.pstlabs.cognive.microservices.userlist.model.Lists;
 import by.pstlabs.cognive.microservices.userlist.service.BankService;
@@ -22,8 +22,13 @@ public class BankController {
 
     @GetMapping("/banks")
     public ResponseEntity<List<Bank>> getAllBanks(){
-        List<Bank> bankList = bankService.getBanks();
+        List<Bank> bankList = bankService.findAll();
         return new ResponseEntity<>(bankList, new HttpHeaders(), HttpStatus.OK);
+    }
+
+    @GetMapping("/banks/{bankId}")
+    public ResponseEntity<Bank> getBankById(@PathVariable(value = "bankId") Long bankId) throws ResourceNotFoundException {
+        return new ResponseEntity<>(bankService.findById(bankId), new HttpHeaders(), HttpStatus.OK);
     }
 
     @GetMapping("/banks/{bankId}/lists")
