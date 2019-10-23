@@ -6,8 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
-    @Bean
-    public MailerSender mailer(){
-        return new MailerSender();
-    }
+
+//    @Bean
+//    public MailerSender mailer(){
+//        return new MailerSender();
+//    }
 }
