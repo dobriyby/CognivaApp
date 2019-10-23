@@ -21,6 +21,12 @@ public class BankService {
     @Autowired
     private ListsRepository listsRepository;
 
+    private final String MSG_BANK_NOT_FOUND = "Bank with id {} not found!";
+
+    private ResourceNotFoundException errBankNotFound(Long bankId) {
+        return new ResourceNotFoundException(String.format(MSG_BANK_NOT_FOUND, bankId));
+    }
+
     public List<Bank> getBanks(){
         return bankRepository.findAll();
     }
@@ -32,13 +38,13 @@ public class BankService {
     public List<Lists> getListsByBankId(Long bankId) throws ResourceNotFoundException {
         return bankRepository.findById(bankId).map((bank -> {
             return new ArrayList<>(bank.getLists());
-        })).orElseThrow(() -> new ResourceNotFoundException("bank not found!"));
+        })).orElseThrow(() -> errBankNotFound(bankId));
     }
 
     public Boolean isUserInAnyList(Long bankId, User user) throws ResourceNotFoundException {
         return bankRepository.findById(bankId).map((bank) -> {
             return bank.getLists().stream().anyMatch((list) -> list.getUserSet().contains(user));
-        }).orElseThrow(() -> new ResourceNotFoundException("Bank with id " + bankId + " not found!"));
+        }).orElseThrow(() -> errBankNotFound(bankId));
     }
 
 }
