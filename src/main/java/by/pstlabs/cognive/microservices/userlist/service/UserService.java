@@ -26,10 +26,24 @@ public class UserService {
     @Autowired
     private ListsRepository listsRepository;
 
-    public List<User> getAllUserByListsId(Long listsId) throws ResourceNotFoundException {
-        return listsRepository.findById(listsId).map(list -> new ArrayList<>(
-                list.getUserSet())).orElseThrow(
-                        () -> new ResourceNotFoundException("List not found with id " + listsId));
+    public User createUser(User user){
+        return userRepository.save(user);
+    }
+
+    public User updateUser(Long userId, User userUpdated) throws ResourceNotFoundException {
+        return userRepository.findById(userId).map((user) -> {
+            user.setEmail(userUpdated.getEmail());
+            user.setName(userUpdated.getName());
+            return userRepository.save(user);
+        }).orElseThrow(() -> new ResourceNotFoundException("user", userId));
+    }
+
+    public List<User> getAllUsers(){
+        return userRepository.findAll();
+    }
+
+    public User findById(Long userId) throws ResourceNotFoundException {
+        return userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("user", userId));
     }
 
     public User createUserByNameAndEmail(String name,String email) {
@@ -39,42 +53,6 @@ public class UserService {
 //        user.setLists(listsRepository.findAll().get(0));
         return userRepository.save(user);
     }
-
-    public User createUser(Long listsId,User user) throws ResourceNotFoundException {
-        return listsRepository.findById(listsId).map(list -> {
-            list.addUser(user);
-//            user.setLists(list);
-            return userRepository.save(user);
-        }).orElseThrow(() -> new ResourceNotFoundException("ListsId " + listsId + " not found"));
-    }
-
-    public User updateUser(Long listsId, Long userId, User userRequest) throws ResourceNotFoundException {
-        if(!listsRepository.existsById(listsId)) {
-            throw new ResourceNotFoundException("ListsId " + listsId + " not found");
-        }
-
-        return userRepository.findById(userId).map(user -> {
-            user.setName(userRequest.getName());
-            return userRepository.save(user);
-        }).orElseThrow(() -> new ResourceNotFoundException("UsertId " + userId + "not found"));
-    }
-
-
-    public HttpStatus deleteUser(Long listsId, Long userId) throws ResourceNotFoundException {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + userId));
-        return listsRepository.findById(listsId).map(list -> {
-            list.deleteUser(user);
-            listsRepository.save(list);
-            return HttpStatus.OK;
-        }).orElseThrow(() -> new ResourceNotFoundException("List not found with id " + listsId));
-
-//        return userRepository.findByIdAndListsId(userId, listsId).map(user -> {
-//            userRepository.delete(user);
-//            return HttpStatus.OK;
-//        }).orElseThrow(() -> new ResourceNotFoundException("User not found with id " + userId + " and listsId " + listsId));
-    }
-
 
 //    public List<User> getAllUsers() {
 //
