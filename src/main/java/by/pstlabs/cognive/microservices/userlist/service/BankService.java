@@ -19,7 +19,7 @@ public class BankService {
     private BankRepository bankRepository;
 
     @Autowired
-    private ListsRepository listsRepository;
+    private ListsService listsService;
 
     private final String MSG_BANK_NOT_FOUND = "Bank with id {} not found!";
 
@@ -31,8 +31,13 @@ public class BankService {
         return bankRepository.findAll();
     }
 
-    public void createList(Long bankId, String listName){
-        // TODO which side have to handle bidirectional associations creation?
+    public Lists createList(Long bankId, String listName) throws ResourceNotFoundException {
+        Lists lists = listsService.createLists(listName);
+        return bankRepository.findById(bankId).map((bank) -> {
+            bank.addLists(lists);
+            bankRepository.save(bank);
+            return lists;
+        }).orElseThrow(() -> errBankNotFound(bankId));
     }
 
     public List<Lists> getListsByBankId(Long bankId) throws ResourceNotFoundException {

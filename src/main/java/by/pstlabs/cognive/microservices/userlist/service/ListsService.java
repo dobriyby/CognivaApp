@@ -25,6 +25,10 @@ public class ListsService {
         return listsRepository.findAll();
     }
 
+    public Lists createLists(String listName){
+        return this.createLists(new Lists(listName));
+    }
+
     public Lists createLists(Lists lists) {
         return listsRepository.save(lists);
     }
