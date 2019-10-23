@@ -35,10 +35,10 @@ public class Lists {
     )
     private Set<User> userSet = new HashSet<>();
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "bank_id")
-//    @JsonIgnore
-    private Bank bank;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "bank_id")
+////    @JsonIgnore
+//    private Bank bank;
 
     public Lists() {
     }
@@ -80,13 +80,13 @@ public class Lists {
         this.userSet.remove(user);
     }
 
-    public Bank getBank() {
-        return bank;
-    }
-
-    public void setBank(Bank bank) {
-        this.bank = bank;
-    }
+//    public Bank getBank() {
+//        return bank;
+//    }
+//
+//    public void setBank(Bank bank) {
+//        this.bank = bank;
+//    }
 
 //    public List<User> getUserList() {
 //        return userList;

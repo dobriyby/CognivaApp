@@ -21,7 +21,13 @@ public class Bank {
     @NotNull
     private String name;
 
-    @OneToMany(mappedBy = "bank", cascade = CascadeType.ALL)
+    // @OneToMany(mappedBy = "bank", cascade = CascadeType.ALL)
+    @OneToMany
+    @JoinTable(
+            name="bank_lists",
+            joinColumns = @JoinColumn(name="bank_id"),
+            inverseJoinColumns = @JoinColumn(name="lists_id")
+    )
     private Map<Long, Lists> listsMap = new HashMap<>();
 
     public Long getId() {
