@@ -1,8 +1,6 @@
 package by.pstlabs.cognive.microservices.notifications.controller.rest;
 
-import by.pstlabs.cognive.microservices.notifications.exception.UnableToSendNotificationException;
-import by.pstlabs.cognive.microservices.notifications.exception.UserBannedNotificationsException;
-import by.pstlabs.cognive.microservices.notifications.exception.UserNotFoundException;
+import by.pstlabs.cognive.microservices.notifications.exception.CustomException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,11 +17,11 @@ public class TestController {
     public String test(@RequestParam int id) {
         switch (id) {
             case (1):
-                throw new UnableToSendNotificationException();
+                throw new CustomException(HttpStatus.BAD_GATEWAY, "Custom  - Bad gateway", -1 , "");
             case (2):
-                throw new UserBannedNotificationsException();
+                throw new CustomException(HttpStatus.BAD_REQUEST, "Custom - Bad request");
             case (3):
-                throw new UserNotFoundException();
+                throw new CustomException(HttpStatus.OK);
         }
         return "no exception";
     }

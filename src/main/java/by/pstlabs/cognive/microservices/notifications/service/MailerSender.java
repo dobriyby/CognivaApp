@@ -1,6 +1,6 @@
 package by.pstlabs.cognive.microservices.notifications.service;
 
-import by.pstlabs.cognive.microservices.notifications.exception.UnableToSendNotificationException;
+import by.pstlabs.cognive.microservices.notifications.exception.CustomException;
 import by.pstlabs.cognive.microservices.notifications.model.ApiResponse;
 import by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest;
 import org.simplejavamail.email.Email;
@@ -15,7 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 
-import javax.annotation.PostConstruct;
+import javax.annotation.PostConstruct;;
 import java.util.List;
 
 /**
@@ -64,7 +64,7 @@ public class MailerSender implements MailerSenderService {
             mailer.sendMail(email);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
-            throw new UnableToSendNotificationException();
+            throw new CustomException(HttpStatus.BAD_REQUEST, "Unable to send notification");
         }
         ApiResponse apiResponse =
                 new ApiResponse(HttpStatus.OK, "Mail accepted for delivery", 0, "");
