@@ -1,11 +1,15 @@
 package by.pstlabs.cognive.microservices.notifications.service;
 
 import by.pstlabs.cognive.common.model.User;
+import by.pstlabs.cognive.microservices.notifications.model.ApiResponse;
 import by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest;
 import by.pstlabs.cognive.microservices.notifications.model.Push;
 import by.pstlabs.cognive.microservices.notifications.repository.PushRepository;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -37,18 +41,21 @@ public class PushServiceImp implements PushService {
     }
 
     @Override
-    public String addPushToAll(Date date, String text) {
+    public ResponseEntity<Object> addPushToAll(Date date, String text) {
         Push push = new Push();
         push.setSendtime(date);
         push.setUsers(userRepo.findAll());
         push.setSendStatus(false);
         push.setMessage(text);
         pushRepo.save(push);
-        return "done";
+        ApiResponse apiResponse =
+                new ApiResponse(HttpStatus.OK, "Push success added to database!", 0, "");
+        return new ResponseEntity<>(
+                apiResponse, new HttpHeaders(), apiResponse.getStatus());
     }
 
     @Override
-    public String addPushToUserName(Date date, String name, String text) {
+    public ResponseEntity<Object> addPushToUserName(Date date, String name, String text) {
         Push push = new Push();
         push.setSendStatus(false);
         push.setMessage(text);
@@ -57,7 +64,10 @@ public class PushServiceImp implements PushService {
         push.setUsers(userRepo.findAllByName(name));
         System.out.println("savepush");
         pushRepo.save(push);
-        return "done";
+        ApiResponse apiResponse =
+                new ApiResponse(HttpStatus.OK, "Push success added to database!", 0, "");
+        return new ResponseEntity<>(
+                apiResponse, new HttpHeaders(), apiResponse.getStatus());
     }
 
 }

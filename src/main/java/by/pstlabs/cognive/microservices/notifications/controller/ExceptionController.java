@@ -1,9 +1,7 @@
 package by.pstlabs.cognive.microservices.notifications.controller;
 
+import by.pstlabs.cognive.microservices.notifications.exception.CustomException;
 import by.pstlabs.cognive.microservices.notifications.model.ResponseSignature;
-import by.pstlabs.cognive.microservices.notifications.exception.UnableToSendNotificationException;
-import by.pstlabs.cognive.microservices.notifications.exception.UserBannedNotificationsException;
-import by.pstlabs.cognive.microservices.notifications.exception.UserNotFoundException;
 import by.pstlabs.cognive.microservices.notifications.model.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,9 +38,7 @@ public class ExceptionController extends ResponseEntityExceptionHandler {
     }
 
     //UserExceptionHandler
-    @ExceptionHandler({UserNotFoundException.class,
-            UserBannedNotificationsException.class,
-            UnableToSendNotificationException.class})
+    @ExceptionHandler({CustomException.class})
     public ResponseEntity<Object> handleUserNotFoundException(ResponseSignature ex) {
         logger.error(ex.getResponse().toString());
         return new ResponseEntity<>(

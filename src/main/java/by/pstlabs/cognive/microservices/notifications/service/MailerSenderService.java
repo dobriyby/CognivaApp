@@ -15,5 +15,4 @@ public interface MailerSenderService {
     ResponseEntity<Object> SendMail(MailNotificationRequest mailNotificationRequest);
 
     ResponseEntity<Object> SendMails(List<MailNotificationRequest> mailNotificationRequestList);
-
 }

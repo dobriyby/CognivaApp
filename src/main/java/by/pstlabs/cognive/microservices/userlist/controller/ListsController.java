@@ -65,14 +65,14 @@ public class ListsController {
     }
 
     @PostMapping("/lists/{listsId}/users")
-    public ResponseEntity<User> createUser(@PathVariable (value = "listsId") Long listsId,
-                                           @Valid @RequestBody User user) throws ResourceNotFoundException {
+    public ResponseEntity<User> addUserToList(@PathVariable (value = "listsId") Long listsId,
+                                              @Valid @RequestBody User user) throws ResourceNotFoundException {
         return new ResponseEntity<>(listsService.addUser(listsId, user), new HttpHeaders(), HttpStatus.OK);
     }
 
     @DeleteMapping("/lists/{listsId}/users/{userId}")
-    public HttpStatus deleteUser(@PathVariable (value = "listsId") Long listsId,
-                                 @PathVariable (value = "userId") Long userId) throws ResourceNotFoundException {
+    public HttpStatus deleteUserFromList(@PathVariable (value = "listsId") Long listsId,
+                                         @PathVariable (value = "userId") Long userId) throws ResourceNotFoundException {
         listsService.deleteUser(listsId, userId);
         return HttpStatus.OK;
     }
