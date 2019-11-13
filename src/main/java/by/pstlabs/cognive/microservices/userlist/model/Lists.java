@@ -1,6 +1,7 @@
 package by.pstlabs.cognive.microservices.userlist.model;
 
-import by.pstlabs.cognive.microservices.notifications.model.Push;
+import by.pstlabs.cognive.common.model.BaseEntity;
+import by.pstlabs.cognive.common.model.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -14,62 +15,45 @@ import java.util.Set;
 
 @Entity
 @Table(name = "userlist")
-public class Lists {
+public class Lists extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    public Lists(){}
 
-    @NotNull
-    @Size(max = 50)
-    @Column(name = "title",unique = true)
-    private String title;
+    public Lists(String name){
+        this.name = name;
+    }
 
-    @OneToMany(mappedBy = "lists", cascade = CascadeType.ALL)
+    //@OneToMany(mappedBy = "lists", cascade = CascadeType.ALL)
+    @OneToMany
+    @JoinTable(
+            name="list_user",
+            joinColumns = @JoinColumn(name="list_id"),
+            inverseJoinColumns = @JoinColumn(name="user_id")
+    )
     private Set<User> userSet = new HashSet<>();
 
-
-    public Lists() {
+    public Set<User> getUserSet() {
+        return userSet;
     }
 
-    public Lists(String title) {
-        this.title = title;
-
+    public void setUserSet(Set<User> userSet) {
+        this.userSet = userSet;
     }
 
-    public Long getId() {
-        return id;
+    public void addUser(User user){
+        this.userSet.add(user);
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void deleteUser(User user){
+        this.userSet.remove(user);
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-//    public List<User> getUserList() {
-//        return userList;
-//    }
-//
-//    public void setUserList(List<User> userList) {
-//         this.userList = userList;
-//    }
 
     @Override
     public String toString() {
         return "UserList{" +
                 "id=" + id +
-                ", typeOfList=" + title +
+                ", typeOfList=" + name +
                 '}';
     }
-
-
 
 }

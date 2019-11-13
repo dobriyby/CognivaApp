@@ -1,7 +1,6 @@
-package by.pstlabs.cognive.microservices.userlist.model;
+package by.pstlabs.cognive.common.model;
 
 import by.pstlabs.cognive.microservices.notifications.model.Push;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -16,18 +15,13 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
+    protected Long id;
 
+    @Column
     @NotNull
-    @Column(name = "name")
-    private String name;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "lists_id")
-    @JsonIgnore
-    private Lists lists;
+    protected String name;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "users")
     private Set<Push> users;
@@ -39,10 +33,14 @@ public class User {
     public User() {
     }
 
-    public User(String name, Lists lists) {
+    public User(String name){
         this.name = name;
-        this.lists = lists;
     }
+
+//    public User(String name, Lists lists) {
+//        this.name = name;
+//        this.lists = lists;
+//    }
 
     public Long getId() {
         return id;
@@ -60,12 +58,12 @@ public class User {
         this.name = name;
     }
 
-    public Lists getLists() {
-        return lists;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLists(Lists userlist) {
-        this.lists = userlist;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Set<Push> getUsers() {
@@ -81,15 +79,8 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", userlist=" + lists +
+                //", userlist=" + lists +
                 '}';
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

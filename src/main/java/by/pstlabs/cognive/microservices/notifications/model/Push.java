@@ -1,13 +1,10 @@
 package by.pstlabs.cognive.microservices.notifications.model;
 
-import by.pstlabs.cognive.microservices.userlist.model.User;
+import by.pstlabs.cognive.common.model.User;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "push")

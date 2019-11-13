@@ -1,6 +1,6 @@
 package by.pstlabs.cognive.microservices.userlist.repository;
 
-import by.pstlabs.cognive.microservices.userlist.model.User;
+import by.pstlabs.cognive.common.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,9 +13,9 @@ import java.util.Optional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    List<User> findByListsId(Long listId);
+//    List<User> findByListsId(Long listId);
 
-    Optional<User> findByIdAndListsId(Long id, Long listId);
+//    Optional<User> findByIdAndListsId(Long id, Long listId);
 
     List<User> findAllByName(String name);
 }
