@@ -33,7 +33,7 @@ public class PushServiceImp implements PushService {
         List<Push> pushes = pushRepo.findPushesBySendtimeBeforeAndSendStatusFalse(new Date());
         for (Push push: pushes) {
             for (User user: push.getUsers()) {
-                mailer.SendMail(new MailNotificationRequest(user.getEmail(),"test",user.getName(),push.getMessage()));
+                mailer.SendMail(new MailNotificationRequest(user.getEmail(),"Cogniva Push Notification",user.getName(),push.getMessage()));
             }
             push.setSendStatus(true);
             pushRepo.save(push);
