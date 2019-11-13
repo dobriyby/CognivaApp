@@ -1,5 +1,6 @@
 package by.pstlabs.cognive.microservices.notifications.service;
 
+import by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest;
 import by.pstlabs.cognive.microservices.notifications.model.Push;
 import by.pstlabs.cognive.microservices.notifications.repository.PushRepository;
 import by.pstlabs.cognive.microservices.userlist.model.User;
@@ -31,7 +32,7 @@ public class PushServiceImp implements PushService {
         List<Push> pushes = pushRepo.findPushesBySendtimeBeforeAndSendStatusFalse(new Date());
         for (Push push: pushes) {
             for (User user: push.getUsers()) {
-                mailer.SendMail(user.getEmail(),user.getName(),push.getMessage());
+                mailer.SendMail(new MailNotificationRequest(user.getEmail(),"Cogniva Mail Natification",user.getName(),push.getMessage()));
             }
             push.setSendStatus(true);
             pushRepo.save(push);
@@ -56,9 +57,7 @@ public class PushServiceImp implements PushService {
         push.setSendStatus(false);
         push.setMessage(text);
         push.setSendtime(date);
-        System.out.println(userRepo.findAllByName(name));
         push.setUsers(userRepo.findAllByName(name));
-        System.out.println("savepush");
         pushRepo.save(push);
         return "done";
     }
