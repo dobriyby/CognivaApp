@@ -1,0 +1,22 @@
+<br>
+<table [ngClass]="['table','table-striped']">
+  <thead [ngClass]="['thead-dark']">
+    <tr>
+      <th>ID</th>
+      <th>Сообщение</th>
+      <th>Статус отправки</th>
+      <th>Время отправки</th>
+      <th>Список пользователей</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let push of listPush">
+    <td>{{push.id}}</td>
+    <td>{{push.message}}</td>
+    <td>{{push.sendStatus}}</td>
+    <td>{{changeDateToText(push.sendtime)}}</td>
+    <td>{{push.users}}</td>
+  </tbody>
+</table>
+
+
