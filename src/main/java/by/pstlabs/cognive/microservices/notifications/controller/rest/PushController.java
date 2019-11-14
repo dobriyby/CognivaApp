@@ -1,17 +1,16 @@
 package by.pstlabs.cognive.microservices.notifications.controller.rest;
 
+import by.pstlabs.cognive.microservices.notifications.model.Push;
 import by.pstlabs.cognive.microservices.notifications.service.PushService;
 import by.pstlabs.cognive.microservices.userlist.model.Lists;
 import by.pstlabs.cognive.microservices.userlist.service.ListsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 @RestController
 @RequestMapping("/push")
@@ -39,5 +38,12 @@ public class PushController {
     @PostMapping("/AddList")
     void addPush(@RequestParam String name) {
         listsService.create(new Lists(name));
+    }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/all")
+    List<Push> addPush() {
+        System.out.println("AllPushes");
+        return pushService.getAllPushes();
     }
 }

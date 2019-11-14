@@ -6,6 +6,7 @@ import by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequ
 import by.pstlabs.cognive.microservices.notifications.model.Push;
 import by.pstlabs.cognive.microservices.notifications.repository.PushRepository;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -66,6 +67,11 @@ public class PushServiceImp implements PushService {
                 new ApiResponse(HttpStatus.OK, "Push success added to database!", 0, "");
         return new ResponseEntity<>(
                 apiResponse, new HttpHeaders(), apiResponse.getStatus());
+    }
+
+    @Override
+    public List<Push> getAllPushes() {
+        return Lists.newArrayList(pushRepo.findAll());
     }
 
 }
