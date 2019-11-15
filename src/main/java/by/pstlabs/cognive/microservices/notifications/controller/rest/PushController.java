@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/push")
 public class PushController {
 
@@ -40,7 +41,6 @@ public class PushController {
         listsService.create(new Lists(name));
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/all")
     List<Push> addPush() {
         System.out.println("AllPushes");
