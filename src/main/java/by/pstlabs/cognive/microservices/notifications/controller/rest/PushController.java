@@ -43,7 +43,6 @@ public class PushController {
 
     @GetMapping("/all")
     List<Push> addPush() {
-        System.out.println("AllPushes");
         return pushService.getAllPushes();
     }
 }
