@@ -9,6 +9,7 @@ import { PushesPageComponent } from './pushes-page/pushes-page.component';
 import {HttpControlService} from "./service/http-control.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {HeaderComponent} from "./header/header.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HeaderComponent} from "./header/header.component";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ HttpControlService  ],
   bootstrap: [AppComponent]

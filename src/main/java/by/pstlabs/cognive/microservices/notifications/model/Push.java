@@ -1,6 +1,8 @@
 package by.pstlabs.cognive.microservices.notifications.model;
 
 import by.pstlabs.cognive.common.model.User;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -15,6 +17,7 @@ public class Push {
     private Long id;
 
     @Column(name = "sendtime")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm")
     private Date sendtime;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -22,6 +25,7 @@ public class Push {
             joinColumns = @JoinColumn(name="push_id", referencedColumnName="id"),
             inverseJoinColumns = @JoinColumn(name="userchik_id", referencedColumnName="id")
     )
+    @JsonIgnore
     private List<User> users;
 
     @Column(name = "sendStatus")
@@ -29,6 +33,9 @@ public class Push {
 
     @Column(name = "message")
     private String message;
+
+    @Column(name = "title")
+    private String title;
 
     public Long getId() {
         return id;
@@ -68,5 +75,13 @@ public class Push {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

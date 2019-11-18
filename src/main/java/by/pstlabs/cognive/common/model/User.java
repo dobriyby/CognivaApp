@@ -24,7 +24,7 @@ public class User {
     protected String name;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "users")
-    private Set<Push> users;
+    private Set<Push> pushes;
 
     @Column
     private String email;
@@ -66,12 +66,12 @@ public class User {
         this.email = email;
     }
 
-    public Set<Push> getUsers() {
-        return users;
+    public Set<Push> getPushes() {
+        return pushes;
     }
 
-    public void setUsers(Set<Push> users) {
-        this.users = users;
+    public void setPushes(Set<Push> pushes) {
+        this.pushes = pushes;
     }
 
     @Override
@@ -82,5 +82,6 @@ public class User {
                 //", userlist=" + lists +
                 '}';
     }
+
 
 }

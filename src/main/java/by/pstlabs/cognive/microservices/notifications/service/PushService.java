@@ -11,7 +11,7 @@ public interface PushService {
 
     void checkSendTimePush();
     ResponseEntity<Object> addPushToAll(Date date, String text);
-    ResponseEntity<Object> addPushToUserName(Date date, String name, String text);
+    ResponseEntity<Object> addPushToUserName(Date date, String name, String text, String title);
     List<Push> getAllPushes();
 
 }

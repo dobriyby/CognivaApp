@@ -34,7 +34,7 @@ public class PushServiceImp implements PushService {
         List<Push> pushes = pushRepo.findPushesBySendtimeBeforeAndSendStatusFalse(new Date());
         for (Push push: pushes) {
             for (User user: push.getUsers()) {
-                mailer.SendMail(new MailNotificationRequest(user.getEmail(),"Cogniva Push Notification",user.getName(),push.getMessage()));
+                mailer.SendMail(new MailNotificationRequest(user.getEmail(),push.getTitle(),user.getName(),push.getMessage()));
             }
             push.setSendStatus(true);
             pushRepo.save(push);
@@ -56,8 +56,9 @@ public class PushServiceImp implements PushService {
     }
 
     @Override
-    public ResponseEntity<Object> addPushToUserName(Date date, String name, String text) {
+    public ResponseEntity<Object> addPushToUserName(Date date, String name, String text, String title) {
         Push push = new Push();
+        push.setTitle(title);
         push.setSendStatus(false);
         push.setMessage(text);
         push.setSendtime(date);

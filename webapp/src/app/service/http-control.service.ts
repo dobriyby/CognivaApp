@@ -13,4 +13,12 @@ export class HttpControlService {
   getAllPush(): Observable<any>{
     return  this.http.get('http://localhost:8080/push/all');
   }
+
+  addPushToUsername(push): Observable<any>{
+   return this.http.post('http://localhost:8080/push/AddPushToUserName',push,{headers: {'Content-Type':'application/json'}});
+  }
+
+  getUsers(){
+    return this.http.get('http://localhost:8080/users')
+  }
 }

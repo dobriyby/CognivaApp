@@ -1,4 +1,12 @@
-<br>
+<form [formGroup] = "pushForm">
+  <label style="width: 50px">Name</label><select style="width: 200px" (change)="onChangeUser($event.target.value)">
+  <option *ngFor="let user of listUsers" [ngValue]="user">{{user.name}}</option>
+</select><br>
+  <label style="width: 50px"> Text </label><input style="width: 200px" formControlName="text" required=""><br>
+  <label style="width: 50px"> Date </label><input style="width: 200px" formControlName="date" required="" type="date"><br>
+  <label style="width: 50px"> Title </label><input style="width: 200px" formControlName="title" required="" ><br>
+  <button type="sumbit" (click)="add()">add</button>
+</form>
 <table [ngClass]="['table','table-striped']">
   <thead [ngClass]="['thead-dark']">
     <tr>
@@ -6,15 +14,17 @@
       <th>Сообщение</th>
       <th>Статус отправки</th>
       <th>Время отправки</th>
+      <th>Заголовок</th>
       <th>Список пользователей</th>
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let push of listPush">
+  <tr *ngFor="let push of listPushes">
     <td>{{push.id}}</td>
     <td>{{push.message}}</td>
     <td>{{push.sendStatus}}</td>
     <td>{{changeDateToText(push.sendtime)}}</td>
+    <td>{{push.title}}</td>
     <td>{{push.users}}</td>
   </tbody>
 </table>
