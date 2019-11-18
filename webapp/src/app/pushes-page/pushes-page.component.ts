@@ -39,6 +39,7 @@ export class PushesPageComponent implements OnInit {
 
   private fetchPushes(val){
     this.listPushes = val;
+    this.listPushes.forEach(push =>{console.log(push.message)})
   }
 
   private fetchUsers(val) {

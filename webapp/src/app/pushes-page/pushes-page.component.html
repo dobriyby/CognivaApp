@@ -1,11 +1,20 @@
-<form [formGroup] = "pushForm">
-  <label style="width: 50px">Name</label><select style="width: 200px" (change)="onChangeUser($event.target.value)">
+<form [formGroup] = "pushForm" [ngClass]="['col-sm-4 customForm']">
+  <div [ngClass]="['form-group row']">
+   <label [ngClass]="['col-sm-2', 'col-form-label']">Name</label><div [ngClass]="['col-sm-10']"><select [ngClass]="['form-control']" (change)="onChangeUser($event.target.value)">
   <option *ngFor="let user of listUsers" [ngValue]="user">{{user.name}}</option>
-</select><br>
-  <label style="width: 50px"> Text </label><input style="width: 200px" formControlName="text" required=""><br>
-  <label style="width: 50px"> Date </label><input style="width: 200px" formControlName="date" required="" type="date"><br>
-  <label style="width: 50px"> Title </label><input style="width: 200px" formControlName="title" required="" ><br>
-  <button type="sumbit" (click)="add()">add</button>
+</select></div></div>
+  <div [ngClass]="['form-group row']">
+    <label [ngClass]="['col-sm-2', 'col-form-label']"> Text </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="text" required=""></div><br>
+  </div>
+  <div [ngClass]="['form-group row']">
+    <label [ngClass]="['col-sm-2', 'col-form-label']"> Date </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="date" required="" type="date"><br>
+  </div></div>
+  <div [ngClass]="['form-group row']">
+    <label [ngClass]="['col-sm-2', 'col-form-label']"> Title </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="title" required="" ><br>
+  </div></div>
+  <div>
+    <button [ngClass]="['btn btn-dark']" type="sumbit" (click)="add()">Добавить</button>
+  </div>
 </form>
 <table [ngClass]="['table','table-striped']">
   <thead [ngClass]="['thead-dark']">
