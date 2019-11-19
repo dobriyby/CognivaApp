@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, Observer} from "rxjs";
-import { of } from 'rxjs';
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpControlService {
   private listPush;
+
   constructor(private http: HttpClient) { }
 
   getAllPush(): Observable<any>{
@@ -15,9 +15,8 @@ export class HttpControlService {
   }
 
   addPushToUsername(push, name): Observable<any>{
-    console.log(push.sendtime,name);
     let body = { 'push': JSON.stringify(push), 'name': name};
-   return this.http.post('http://localhost:8080/push/AddPushToUserName',body);
+    return this.http.post('http://localhost:8080/push/AddPushToUserName',body);
   }
 
   getUsers(){

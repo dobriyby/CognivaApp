@@ -38,6 +38,7 @@ export class PushesPageComponent implements OnInit {
 
   private fetchPushes(val){
     this.listPushes = val;
+   // this.listPushes.forEach(push=> console.log(push.users));
   }
 
   private fetchUsers(val) {
@@ -57,7 +58,6 @@ export class PushesPageComponent implements OnInit {
       let name = this.pushForm.controls.name.value;
       push.message = this.pushForm.controls.text.value;
       push.title = this.pushForm.controls.title.value;
-      console.log(push);
       this._http.addPushToUsername(push, name).subscribe((value) =>this._http.getAllPush().subscribe(value => this.fetchPushes(value)), (error) => console.log(error));
     }else{
       console.log('invalid form')
@@ -67,5 +67,11 @@ export class PushesPageComponent implements OnInit {
 
   onChangeUser(user) {
     this.pushForm.controls.name.setValue(user);
+  }
+
+  listUsersToString(users): String {
+    let list='';
+    users.forEach(user=> list+=user.name+' ');
+    return list;
   }
 }

@@ -25,7 +25,7 @@ public class Push {
             joinColumns = @JoinColumn(name="push_id", referencedColumnName="id"),
             inverseJoinColumns = @JoinColumn(name="userchik_id", referencedColumnName="id")
     )
-    @JsonIgnore
+
     private List<User> users;
 
     @Column(name = "sendStatus")

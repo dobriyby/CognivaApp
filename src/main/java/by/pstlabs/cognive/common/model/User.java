@@ -1,6 +1,7 @@
 package by.pstlabs.cognive.common.model;
 
 import by.pstlabs.cognive.microservices.notifications.model.Push;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -24,6 +25,7 @@ public class User {
     protected String name;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "users")
+    @JsonIgnore
     private Set<Push> pushes;
 
     @Column
