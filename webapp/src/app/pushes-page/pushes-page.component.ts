@@ -4,9 +4,8 @@ import {formatDate} from "@angular/common";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 class CPush {
-  sendDate:string;
-  name:string;
-  text:string;
+  sendtime:string;
+  message:string;
   title:string;
 }
 
@@ -39,7 +38,6 @@ export class PushesPageComponent implements OnInit {
 
   private fetchPushes(val){
     this.listPushes = val;
-    this.listPushes.forEach(push =>{console.log(push.message)})
   }
 
   private fetchUsers(val) {
@@ -54,12 +52,13 @@ export class PushesPageComponent implements OnInit {
   add() {
     if(this.pushForm.valid){
       let push = new CPush();
-      push.sendDate = this.pushForm.controls.date.value;
-      push.name = this.pushForm.controls.name.value;
-      push.text = this.pushForm.controls.text.value;
+      push.sendtime = this.pushForm.controls.date.value;
+      push.sendtime = push.sendtime.replace('T',' ');
+      let name = this.pushForm.controls.name.value;
+      push.message = this.pushForm.controls.text.value;
       push.title = this.pushForm.controls.title.value;
       console.log(push);
-      this._http.addPushToUsername(push).subscribe((value) =>this._http.getAllPush().subscribe(value => this.fetchPushes(value)), (error) => console.log(error));
+      this._http.addPushToUsername(push, name).subscribe((value) =>this._http.getAllPush().subscribe(value => this.fetchPushes(value)), (error) => console.log(error));
     }else{
       console.log('invalid form')
     }

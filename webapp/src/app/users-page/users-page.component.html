@@ -1,1 +1,27 @@
-<p>users-page works!</p>
+<form [formGroup]="formGroup" class="col-sm-4 customForm">
+  <div [ngClass]="['form-group row']">
+    <label [ngClass]="['col-sm-2', 'col-form-label']"> Name </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="name" required=""></div><br>
+  </div>
+  <div [ngClass]="['form-group row']">
+    <label [ngClass]="['col-sm-2', 'col-form-label']"> Email </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="email" required=""></div><br>
+  </div>
+  <div>
+    <button [ngClass]="['btn btn-dark']" type="sumbit" (click)="add()">Добавить</button>
+  </div>
+</form>
+<table class="table-striped table">
+  <thead class="thead-dark">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>email</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of listUsers">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+  </tbody>
+</table>

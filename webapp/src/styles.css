@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~font-awesome/css/font-awesome.css";
+
+.customForm{
+  margin: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  box-shadow: 5px 6px 12px silver;
+}

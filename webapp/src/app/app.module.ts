@@ -10,6 +10,7 @@ import {HttpControlService} from "./service/http-control.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {HeaderComponent} from "./header/header.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import { LeftmenuComponent } from './leftmenu/leftmenu.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     MainPageComponent,
     UsersPageComponent,
     PushesPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    LeftmenuComponent
   ],
   imports: [
     BrowserModule,
