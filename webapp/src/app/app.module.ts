@@ -11,6 +11,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {HeaderComponent} from "./header/header.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import { LeftmenuComponent } from './leftmenu/leftmenu.component';
+import { RolesPageComponent } from './roles-page/roles-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LeftmenuComponent } from './leftmenu/leftmenu.component';
     UsersPageComponent,
     PushesPageComponent,
     HeaderComponent,
-    LeftmenuComponent
+    LeftmenuComponent,
+    RolesPageComponent
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,15 @@ export class HttpControlService {
     return this.http.get('http://localhost:8080/users')
   }
 
+  getRoles(){
+    return this.http.post('http://localhost:8080/roles',null)
+  }
+
   addUser(user) : Observable<any> {
     return this.http.post('http://localhost:8080/users/create',user)
+  }
+
+  addRole(role) : Observable<any> {
+    return this.http.post('http://localhost:8080/roles/create',role)
   }
 }

@@ -3,6 +3,13 @@
     <label [ngClass]="['col-sm-2', 'col-form-label']"> Name </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="name" required=""></div><br>
   </div>
   <div [ngClass]="['form-group row']">
+    <label [ngClass]="['col-sm-2', 'col-form-label']"> Role </label><div [ngClass]="['col-sm-10']"><select [ngClass]="['form-control']" (change)="onChangeRole($event.target.value)">
+    <option *ngFor="let role of listRoles" [ngValue]="role.id">{{role.name}}</option>
+  </select></div></div>
+  <div [ngClass]="['form-group row']">
+  <label [ngClass]="['col-sm-2', 'col-form-label']"> Password </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="password" required=""></div><br>
+</div>
+  <div [ngClass]="['form-group row']">
     <label [ngClass]="['col-sm-2', 'col-form-label']"> Email </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="email" required=""></div><br>
   </div>
   <div>
@@ -14,6 +21,8 @@
   <tr>
     <th>ID</th>
     <th>Name</th>
+    <th>Role</th>
+    <th>Password</th>
     <th>email</th>
   </tr>
   </thead>
@@ -21,6 +30,8 @@
     <tr *ngFor="let user of listUsers">
       <td>{{user.id}}</td>
       <td>{{user.name}}</td>
+      <td>{{user.role_id.name}}</td>
+      <td>{{user.password}}</td>
       <td>{{user.email}}</td>
     </tr>
   </tbody>

@@ -20,6 +20,11 @@ public class User {
     @Column
     protected Long id;
 
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "role_id", nullable = false)
+    @JsonIgnore
+    private Role role;
+
     @Column
     @NotNull
     protected String name;
@@ -30,6 +35,9 @@ public class User {
 
     @Column
     private String email;
+
+    @Column
+    private String password;
 
 
     public User() {
@@ -86,4 +94,19 @@ public class User {
     }
 
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Role getRole_id() {
+        return role;
+    }
+
+    public void setRole_id(Role role_id) {
+        this.role = role_id;
+    }
 }

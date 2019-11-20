@@ -1,10 +1,13 @@
 package by.pstlabs.cognive.microservices.userlist.service;
 
 import by.pstlabs.cognive.common.exception.ResourceNotFoundException;
+import by.pstlabs.cognive.common.model.Role;
 import by.pstlabs.cognive.common.model.User;
 import by.pstlabs.cognive.microservices.userlist.repository.ListsRepository;
+import by.pstlabs.cognive.microservices.userlist.repository.RoleRepository;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
 
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +26,9 @@ public class UserService {
 
     @Autowired
     private ListsRepository listsRepository;
+
+    @Autowired
+    private RoleRepository roleRepository;
 
     public User createUser(User user){
         return userRepository.save(user);
@@ -44,7 +50,7 @@ public class UserService {
         return userRepository.findById(userId).orElseThrow(() -> new ResourceNotFoundException("user", userId));
     }
 
-    public User createUserByNameAndEmail(String name,String email) {
+    public User createUserByNameAndEmail(String name,String email, String password) {
         User user = new User();
         user.setEmail(email);
         user.setName(name);
@@ -52,7 +58,15 @@ public class UserService {
         return userRepository.save(user);
     }
 
-//    public List<User> getAllUsers() {
+    public Role createRole(String name){
+        return roleRepository.save(new Role(name));
+    }
+
+    public List<Role> listRoles() {
+        return Lists.newArrayList(roleRepository.findAll());
+    }
+
+    //    public List<User> getAllUsers() {
 //
 //        List<User> userList = userRepository.findAll();
 //

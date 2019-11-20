@@ -1,0 +1,22 @@
+<form [formGroup] = "formGroup" [ngClass]="['col-sm-4 customForm']">
+  <div [ngClass]="['form-group row']">
+    <label [ngClass]="['col-sm-2', 'col-form-label']"> Name </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="name" required="" ><br>
+  </div></div>
+  <div>
+    <button [ngClass]="['btn btn-dark']" type="sumbit" (click)="add()">Добавить</button>
+  </div>
+</form>
+<table [ngClass]="['table','table-striped']">
+  <thead [ngClass]="['thead-dark']">
+  <tr>
+    <th>ID</th>
+    <th>Наименование</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let role of listRoles">
+    <td>{{role.id}}</td>
+    <td>{{role.name}}</td>
+  </tbody>
+</table>
+
