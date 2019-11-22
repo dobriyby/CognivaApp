@@ -22,6 +22,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
+@RequestMapping("/api")
 public class UserController {
 
     @Autowired
@@ -51,7 +52,7 @@ public class UserController {
         return HttpStatus.OK;
     }
 
-    @PostMapping("/roles")
+    @GetMapping("/roles")
     public List<Role> listRoles() {
         return userService.listRoles();
     }

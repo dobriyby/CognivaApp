@@ -3,8 +3,8 @@
     <label [ngClass]="['col-sm-2', 'col-form-label']"> Name </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="name" required=""></div><br>
   </div>
   <div [ngClass]="['form-group row']">
-    <label [ngClass]="['col-sm-2', 'col-form-label']"> Role </label><div [ngClass]="['col-sm-10']"><select [ngClass]="['form-control']" (change)="onChangeRole($event.target.value)">
-    <option *ngFor="let role of listRoles" [ngValue]="role.id">{{role.name}}</option>
+    <label [ngClass]="['col-sm-2', 'col-form-label']"> Role </label><div [ngClass]="['col-sm-10']"><select [ngClass]="['form-control']" formControlName="role">
+    <option *ngFor="let role of listRoles" [ngValue]="role" >{{role.name}}</option>
   </select></div></div>
   <div [ngClass]="['form-group row']">
   <label [ngClass]="['col-sm-2', 'col-form-label']"> Password </label><div [ngClass]="['col-sm-10']"><input [ngClass]="['form-control']" formControlName="password" required=""></div><br>

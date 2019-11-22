@@ -43,7 +43,7 @@ export class PushesPageComponent implements OnInit {
 
   private fetchUsers(val) {
     this.listUsers = val;
-    this.pushForm.controls.name.setValue(val[0].name);
+    this.pushForm.controls.name.setValue((val.length>0)?val[0].name:"");
   }
 
   private changeDateToText(date: Date){

@@ -17,7 +17,7 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/push")
+@RequestMapping("/api/push")
 public class PushController {
 
     @Autowired

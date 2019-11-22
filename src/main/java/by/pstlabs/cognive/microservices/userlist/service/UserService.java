@@ -9,6 +9,10 @@ import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
 
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
@@ -19,7 +23,7 @@ import java.util.List;
  */
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
@@ -64,6 +68,12 @@ public class UserService {
 
     public List<Role> listRoles() {
         return Lists.newArrayList(roleRepository.findAll());
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        List<User> user = userRepository.findAllByName(username);
+        return user.isEmpty()?null:user.get(0);
     }
 
     //    public List<User> getAllUsers() {

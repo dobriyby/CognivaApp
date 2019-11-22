@@ -1,10 +1,13 @@
 package by.pstlabs.cognive.common.model;
 
+
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "role")
-public class Role {
+//public class Role  implements GrantedAuthority {
+public class Role   {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,4 +40,9 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
+
+//    @Override
+//    public String getAuthority() {
+//        return getName();
+//    }
 }

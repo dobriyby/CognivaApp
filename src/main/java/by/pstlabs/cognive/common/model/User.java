@@ -2,9 +2,13 @@ package by.pstlabs.cognive.common.model;
 
 import by.pstlabs.cognive.microservices.notifications.model.Push;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
 import java.util.Set;
 
 /**
@@ -13,7 +17,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "userchik")
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -38,6 +42,9 @@ public class User {
 
     @Column
     private String password;
+
+    @Column
+    private boolean active = true;
 
 
     public User() {
@@ -94,8 +101,38 @@ public class User {
     }
 
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
     public String getPassword() {
         return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return name;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return active;
     }
 
     public void setPassword(String password) {
@@ -108,5 +145,13 @@ public class User {
 
     public void setRole_id(Role role_id) {
         this.role = role_id;
+    }
+
+    public void setActive(boolean active){
+        this.active = active;
+    }
+
+    public boolean getActive(){
+        return active;
     }
 }

@@ -49,14 +49,11 @@ export class UsersPageComponent implements OnInit {
 
   fetchRole(listRoles){
     this.listRoles = listRoles;
-    console.log(this.listRoles[0]);
     this.formGroup.controls.role.setValue(listRoles[0]);
   }
 
   add() {
-    console.log(this.formGroup.controls.role.value);
     if(this.formGroup.valid){
-      console.log(this.formGroup.controls.role.value);
       let user = new CUser(this.formGroup.controls.name.value,this.formGroup.controls.role.value,this.formGroup.controls.email.value,this.formGroup.controls.password.value);
       this._http.addUser(user).subscribe(()=> {this._http.getUsers().subscribe(value => this.listUsers = value)});
     }else{
@@ -64,7 +61,4 @@ export class UsersPageComponent implements OnInit {
     }
   }
 
-  onChangeRole(role) {
-    this.listUsers.controls.role.setValue(role);
-  }
 }

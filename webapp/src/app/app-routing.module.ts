@@ -1,20 +1,14 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {MainPageComponent} from "./main-page/main-page.component";
-import {UsersPageComponent} from "./users-page/users-page.component";
-import {PushesPageComponent} from "./pushes-page/pushes-page.component";
-import {RolesPageComponent} from "./roles-page/roles-page.component";
-
+import {Routes, RouterModule, ROUTES} from '@angular/router';
 
 const routes: Routes = [
-  {path: '' , component: MainPageComponent},
-  {path: 'users' , component: UsersPageComponent},
-  {path: 'pushes' , component: PushesPageComponent},
-  {path: 'roles' , component: RolesPageComponent}
+ {path: '' , loadChildren: ()=> import('./rout-handler.module').then(mod => mod.RoutHandlerModule)}
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

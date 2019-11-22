@@ -9,9 +9,12 @@ import { PushesPageComponent } from './pushes-page/pushes-page.component';
 import {HttpControlService} from "./service/http-control.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {HeaderComponent} from "./header/header.component";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LeftmenuComponent } from './leftmenu/leftmenu.component';
 import { RolesPageComponent } from './roles-page/roles-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import {SessionService} from "./service/session.service";
+import {RoutHandler, RoutHandlerModule} from "./rout-handler.module";
 
 @NgModule({
   declarations: [
@@ -21,15 +24,18 @@ import { RolesPageComponent } from './roles-page/roles-page.component';
     PushesPageComponent,
     HeaderComponent,
     LeftmenuComponent,
-    RolesPageComponent
+    RolesPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [ HttpControlService  ],
-  bootstrap: [AppComponent]
+  providers: [ HttpControlService , SessionService ],
+  bootstrap: [AppComponent],
+  entryComponents: [MainPageComponent,UsersPageComponent,PushesPageComponent,HeaderComponent,LeftmenuComponent,RolesPageComponent,LoginPageComponent]
 })
 export class AppModule { }
