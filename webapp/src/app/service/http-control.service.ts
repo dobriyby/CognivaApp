@@ -33,7 +33,6 @@ export class HttpControlService {
   }
 
   addUser(user) : Observable<any> {
-    console.log(user);
     return this.http.post(host+'/users/create',user)
   }
 

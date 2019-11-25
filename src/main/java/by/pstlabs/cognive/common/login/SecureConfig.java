@@ -9,11 +9,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-
+//@EnableWebSecurity
 public class SecureConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -27,21 +29,33 @@ public class SecureConfig extends WebSecurityConfigurerAdapter {
 //        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 //        return passwordEncoder;
 //    }
-//
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth){
-//        auth.authenticationProvider(authProvider);
-//    }
-//
+//  @Override
+    protected void configureGlobal(){
+
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth){
+        auth.authenticationProvider(authProvider);
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception
     {
         http
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/**").permitAll()
-                .antMatchers(HttpMethod.POST,"/**").permitAll()
+                .antMatchers("/api/login","/api/users**","/api/pushes**","/login","/api/roles").permitAll()
+               // .antMatchers("/api/roles").authenticated()
+//                .antMatchers("/login**").permitAll()
+//                .anyRequest().authenticated()
+                .and().formLogin()
                 .and().cors()
                 .and().csrf().disable();
+//                .authorizeRequests()
+//                .antMatchers("/#/login**","/login**","/api/login**").permitAll()
+//                .antMatchers("/api/roles").authenticated()
+//                .and().cors()
+//                .and().csrf().disable();
     }
 
 

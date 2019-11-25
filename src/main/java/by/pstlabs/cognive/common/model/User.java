@@ -24,10 +24,16 @@ public class User implements UserDetails {
     @Column
     protected Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "role_id", nullable = false)
-    @JsonIgnore
-    private Role role;
+   // @JoinColumn(name = "role_id", nullable = false)
+
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="roles_users",
+            joinColumns = @JoinColumn(name="userchik_id", referencedColumnName="id"),
+            inverseJoinColumns = @JoinColumn(name="role_id", referencedColumnName="id")
+    )
+   // @JsonIgnore
+    private Set<Role> role;
 
     @Column
     @NotNull
@@ -132,19 +138,11 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return active;
+        return isActive();
     }
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Role getRole_id() {
-        return role;
-    }
-
-    public void setRole_id(Role role_id) {
-        this.role = role_id;
     }
 
     public void setActive(boolean active){
@@ -152,6 +150,18 @@ public class User implements UserDetails {
     }
 
     public boolean getActive(){
+        return isActive();
+    }
+
+    public Set<Role> getRole() {
+        return role;
+    }
+
+    public void setRole(Set<Role> role) {
+        this.role = role;
+    }
+
+    public boolean isActive() {
         return active;
     }
 }

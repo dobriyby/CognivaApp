@@ -14,7 +14,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Stepan Novikov
@@ -34,7 +38,7 @@ public class UserController {
     }
 
     @PostMapping("/users/create")
-    public HttpStatus createUser(@RequestBody User user) {
+    public HttpStatus createUser(@RequestBody User user) throws JsonProcessingException {
         userService.createUser(user);
         return  HttpStatus.OK;
     }

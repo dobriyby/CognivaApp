@@ -6,13 +6,13 @@ import {FormControl, FormGroup} from "@angular/forms";
 class CUser{
   name: string;
   email: string;
-  role_id: bigint;
+  role: bigint [];
   password: string;
 
   constructor(user: string, role, email: string, password: string){
     this.name = user;
     this.email = email;
-    this.role_id = role;
+    this.role = [ role ];
     this.password = password;
   }
 }
@@ -61,4 +61,9 @@ export class UsersPageComponent implements OnInit {
     }
   }
 
+  getListRole(role): String {
+    let list = "";
+    role.forEach(role => list+=role.name);
+    return list;
+  }
 }
