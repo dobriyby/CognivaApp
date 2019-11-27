@@ -13,8 +13,11 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" routerLink="/roles" >Roles <span class="sr-only">(current)</span></a>
     </div>
-    <div class="navbar-nav" style="margin-left: auto;">
+    <div *ngIf="userName==undefined" class="navbar-nav" style="margin-left: auto;">
       <a class="nav-item nav-link active" routerLink="/login" >Login <span class="sr-only">(current)</span></a>
+    </div>
+    <div *ngIf="userName!=undefined" class="navbar-nav" style="margin-left: auto;">
+      <a class="nav-item nav-link active" routerLink="/login" >{{userName.toUpperCase()}}<span class="sr-only">(current)</span></a>
     </div>
   </div>
 </nav>

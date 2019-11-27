@@ -38,4 +38,5 @@ import {RoutHandler, RoutHandlerModule} from "./rout-handler.module";
   bootstrap: [AppComponent],
   entryComponents: [MainPageComponent,UsersPageComponent,PushesPageComponent,HeaderComponent,LeftmenuComponent,RolesPageComponent,LoginPageComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

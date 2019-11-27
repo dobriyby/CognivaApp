@@ -1,21 +1,21 @@
 package by.pstlabs.cognive.common.login.service;
 
 import by.pstlabs.cognive.common.model.User;
-import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
 import by.pstlabs.cognive.microservices.userlist.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+
+import java.util.Collection;
 
 @Component
 public class AuthProvider implements AuthenticationProvider {
@@ -28,26 +28,25 @@ public class AuthProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+
         String name = authentication.getName();
-        System.out.println(authentication.getPrincipal());
         String password = (String) authentication.getCredentials();
-        User user = (User)  userService.loadUserByUsername(name);
-        System.out.println("check secure");
-        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectMapper ob= new ObjectMapper();
         try {
-            System.out.println(objectMapper.writeValueAsString(authentication));
-            System.out.println(objectMapper.writeValueAsString(user));
-            System.out.println(objectMapper.writeValueAsString(new UsernamePasswordAuthenticationToken(user,password,user.getAuthorities())));
+            System.out.println(ob.writeValueAsString(authentication));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
+        User user = (User)  userService.loadUserByUsername(name);
+        System.out.println("check secure");
         if (user == null){
-            throw new UsernameNotFoundException("Не найден пользователь");
+                throw new UsernameNotFoundException("Не найден пользователь");
         }else{
             if(user.getPassword().equals(password) ){
-                return new UsernamePasswordAuthenticationToken(user,password,user.getAuthorities());
+                Collection<? extends GrantedAuthority> authorities = user.getAuthorities();
+                return new UsernamePasswordAuthenticationToken(user,password,authorities);
             }else{
-                throw new BadCredentialsException("Неверный пароль");
+                    throw new CredentialsExpiredException("Неверный пароль");
             }
         }
     }

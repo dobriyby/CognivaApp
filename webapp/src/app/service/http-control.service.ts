@@ -40,8 +40,7 @@ export class HttpControlService {
     return this.http.post(host+'/roles/create',role)
   }
 
-  login(login: string, password: string): Observable<any>{
-    let user = { name: login, password: password};
-    return this.http.post(host+"/login",user);
+  login(user): Observable<any>{
+    return this.http.post("http://localhost:8080"+"/login",user);
   }
 }

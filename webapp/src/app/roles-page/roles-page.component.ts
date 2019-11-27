@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {HttpControlService} from "../service/http-control.service";
+import {SessionService} from "../service/session.service";
 
 @Component({
   selector: 'app-roles-page',
@@ -12,7 +13,7 @@ export class RolesPageComponent implements OnInit {
   listRoles;
   formGroup:FormGroup;
 
-  constructor(private _http: HttpControlService) {
+  constructor(private _http: HttpControlService, private session: SessionService) {
     this._http.getRoles().subscribe(value => this.listRoles = value);
   }
 

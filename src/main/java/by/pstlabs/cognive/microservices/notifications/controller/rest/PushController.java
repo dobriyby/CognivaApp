@@ -7,6 +7,7 @@ import by.pstlabs.cognive.microservices.userlist.service.ListsService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -46,6 +47,8 @@ public class PushController {
 
     @GetMapping("/all")
     List<Push> addPush() {
+        SecurityContextHolder.getContext().getAuthentication().getAuthorities().forEach(role-> System.out.println(role.getAuthority()));
+        System.out.println(SecurityContextHolder.getContext().getAuthentication().toString());
         return pushService.getAllPushes();
     }
 }

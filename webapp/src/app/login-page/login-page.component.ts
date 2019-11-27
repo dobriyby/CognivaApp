@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {SessionService} from "../service/session.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {error} from "util";
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-login-page',
@@ -12,7 +14,7 @@ export class LoginPageComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private session: SessionService, private http: HttpClient) {
+  constructor(private session: SessionService,private rout: Router) {
     this.loginForm = new FormGroup({
       login: new FormControl(),
       password: new FormControl()
@@ -20,14 +22,19 @@ export class LoginPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    sessionStorage.clear();
   }
-
-  // login(){
-  //   this.session.login(this.loginForm.controls.login.value, this.loginForm.controls.password.value).subscribe( value => console.log(value));
-  // }
 
   login(){
-    let user = {"name":"dobriy", "password":"pass","email":"test","active":true}
-    this.http.post("http://localhost:8080/api/login",user).subscribe((isValid)=> console.log(isValid));
+    let user = new FormData();
+    user.append("username",this.loginForm.controls.login.value);
+    user.append("password",this.loginForm.controls.password.value);
+    this.session.login(user).subscribe( user => this.successHandler(user), error => console.log(error.error.message));
   }
+
+  successHandler(value){
+    this.session.setUser(value);
+    this.rout.navigateByUrl("/");
+  }
+
 }
