@@ -14,7 +14,7 @@ export class LoginPageComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private session: SessionService,private rout: Router) {
+  constructor(private session: SessionService,private rout: Router, private http: HttpClient) {
     this.loginForm = new FormGroup({
       login: new FormControl(),
       password: new FormControl()
@@ -29,11 +29,12 @@ export class LoginPageComponent implements OnInit {
     let user = new FormData();
     user.append("username",this.loginForm.controls.login.value);
     user.append("password",this.loginForm.controls.password.value);
-    this.session.login(user).subscribe( user => this.successHandler(user), error => console.log(error.error.message));
+    this.session.login(user).subscribe( res => this.successHandler(res), error => console.log(error.error.message));
   }
 
-  successHandler(value){
-    this.session.setUser(value);
+  successHandler(res){
+    this.session.setUser(res.body);
+    this.session.setToken(res.headers.get('Authorization'));
     this.rout.navigateByUrl("/");
   }
 

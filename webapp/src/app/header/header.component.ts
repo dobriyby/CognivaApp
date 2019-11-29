@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor(private session: SessionService) { }
 
   ngOnInit() {
-    console.log(this.session.getUser());
+    // console.log(this.session.getUser());
     if (this.session.getUser() != undefined) {
       this.userName = this.session.getUser().name
     }

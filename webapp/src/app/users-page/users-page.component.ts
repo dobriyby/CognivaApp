@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {HttpControlService} from "../service/http-control.service";
 import {FormControl, FormGroup} from "@angular/forms";
+import {SessionService} from "../service/session.service";
 
 class CUser{
   name: string;
@@ -28,7 +29,7 @@ export class UsersPageComponent implements OnInit {
   listUsers;
   formGroup: FormGroup;
 
-  constructor(private _http: HttpControlService) {
+  constructor(private _http: HttpControlService, private session: SessionService) {
     this._http.getUsers().subscribe(value => this.fetchUser(value));
     this._http.getRoles().subscribe(value => this.fetchRole(value));
 

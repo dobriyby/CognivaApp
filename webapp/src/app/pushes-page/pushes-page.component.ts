@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpControlService} from "../service/http-control.service";
 import {formatDate} from "@angular/common";
 import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {SessionService} from "../service/session.service";
 
 class CPush {
   sendtime:string;
@@ -22,7 +23,7 @@ export class PushesPageComponent implements OnInit {
   pushForm: FormGroup;
 
 
-  constructor(private _http:  HttpControlService) {
+  constructor(private _http:  HttpControlService, private session: SessionService) {
    this._http.getAllPush().subscribe(value => this.fetchPushes(value));
    this._http.getUsers().subscribe(value=>this.fetchUsers(value));
   }

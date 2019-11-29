@@ -47,8 +47,8 @@ public class PushController {
 
     @GetMapping("/all")
     List<Push> addPush() {
-        SecurityContextHolder.getContext().getAuthentication().getAuthorities().forEach(role-> System.out.println(role.getAuthority()));
-        System.out.println(SecurityContextHolder.getContext().getAuthentication().toString());
+//        SecurityContextHolder.getContext().getAuthentication().getAuthorities().forEach(role-> System.out.println(role.getAuthority()));
+//        System.out.println(SecurityContextHolder.getContext().getAuthentication().toString());
         return pushService.getAllPushes();
     }
 }

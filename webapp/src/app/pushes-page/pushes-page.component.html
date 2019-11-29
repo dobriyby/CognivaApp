@@ -1,4 +1,4 @@
-<form [formGroup] = "pushForm" [ngClass]="['col-sm-4 customForm']">
+<form *ngIf="session.hasRole('admin')" [formGroup] = "pushForm" [ngClass]="['col-sm-4 customForm']">
   <div [ngClass]="['form-group row']">
    <label [ngClass]="['col-sm-2', 'col-form-label']">Name</label><div [ngClass]="['col-sm-10']"><select [ngClass]="['form-control']" (change)="onChangeUser($event.target.value)">
   <option *ngFor="let user of listUsers" [ngValue]="user">{{user.name}}</option>

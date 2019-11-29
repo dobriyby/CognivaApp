@@ -28,17 +28,16 @@ public class AuthProvider implements AuthenticationProvider {
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-
+        System.out.println("AuthProvider start!");
         String name = authentication.getName();
         String password = (String) authentication.getCredentials();
         ObjectMapper ob= new ObjectMapper();
-        try {
-            System.out.println(ob.writeValueAsString(authentication));
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            System.out.println(ob.writeValueAsString(authentication));
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
         User user = (User)  userService.loadUserByUsername(name);
-        System.out.println("check secure");
         if (user == null){
                 throw new UsernameNotFoundException("Не найден пользователь");
         }else{

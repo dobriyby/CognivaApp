@@ -27,6 +27,14 @@ export class SessionService {
     sessionStorage.setItem("user",JSON.stringify(user));
   }
 
+  public setToken(token){
+    sessionStorage.setItem("token",token);
+  }
+
+  public getToken(): string{
+    return sessionStorage.getItem("token");
+  }
+
   hasRole(roleName: string): boolean{
     let result = false;
     let user = this.getUser();
