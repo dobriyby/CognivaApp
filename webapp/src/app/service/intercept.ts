@@ -2,7 +2,6 @@ import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/com
 import {Observable} from "rxjs";
 import {SessionService} from "./session.service";
 import {Injectable} from "@angular/core";
-import {tap} from "rxjs/operators";
 
 @Injectable()
 export class Intercept implements HttpInterceptor {
@@ -15,9 +14,9 @@ export class Intercept implements HttpInterceptor {
     console.log('Intercept with token: '+token);
     if(token!=null){
       let clone = req.clone({headers:req.headers.set("Authorization",token as string)});
-      return next.handle(clone).pipe(tap(ev => console.log(ev)))
+      return next.handle(clone)//.pipe(tap(ev => console.log(ev)))
     }else{
-      return next.handle(req).pipe(tap(ev => console.log(ev)))
+      return next.handle(req)//.pipe(tap(ev => console.log(ev)))
     }
   }
 }
