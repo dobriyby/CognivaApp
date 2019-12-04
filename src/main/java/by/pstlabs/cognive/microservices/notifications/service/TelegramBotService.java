@@ -75,11 +75,11 @@ public class TelegramBotService{
     public void checkUpdate(Update update) throws AWTException, IOException {
         String user = update.getMessage().getFrom().getId().toString();
         int index = update.getMessage().getText().indexOf(" ");
-        index = index>-1?index:update.getMessage().getText().length()-1;
+        index = index>-1?index:update.getMessage().getText().length();
         String command = update.getMessage().getText().substring(0,index);
         String text = update.getMessage().getText().replace(command,"");
         System.out.println("Command: "+command+" text: "+text);
-        switch (update.getMessage().getText()) {
+        switch (command) {
             case ("/listusers"): {
                 ArrayList<String> list = new ArrayList<String>();
                 userService.getAllUsers().forEach(_user -> list.add(_user.getName()));
@@ -103,7 +103,7 @@ public class TelegramBotService{
                 break;
             }
             case ("/gitpush"):{
-                gitService.push("testpush");
+                gitService.push(text);
                 System.out.println("Git push complate!");
                 break;
             }
