@@ -9,6 +9,7 @@ import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.attributes.AttributesNodeProvider;
 import org.eclipse.jgit.lib.*;
+import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.transport.CredentialsProvider;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -95,11 +96,10 @@ public class TelegramBotService{
 //                        .setDirectory(new File("/path/to/repo"))
 //                        .call();
                 Git git = Git.open(new File(""));
-                git.checkout().setName("dev-local").call();
+                System.out.println(git.getRepository().getDirectory().getAbsolutePath());
                 git.branchList().call().forEach(branch -> System.out.println(branch.getName()));
-                git.commit().setAuthor("Dobriy","mage-wow@mail.ru").setMessage("test commit").call();
-                git.push().setCredentialsProvider(cp).call();
-
+                RevCommit rev =  git.commit().setAuthor("Dobriy","mage-wow@mail.ru").setMessage("test cfffommit").call();
+                git.push().setCredentialsProvider(cp).setPushAll().call();
                 break;
             }
             default:
