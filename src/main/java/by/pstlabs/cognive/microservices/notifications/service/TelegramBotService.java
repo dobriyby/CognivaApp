@@ -5,6 +5,7 @@ import by.pstlabs.cognive.microservices.notifications.model.TelegramBot;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
 import by.pstlabs.cognive.microservices.userlist.service.UserService;
 import com.github.sarxos.webcam.Webcam;
+import org.eclipse.jgit.api.AddCommand;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.attributes.AttributesNodeProvider;
@@ -24,7 +25,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.SortedSet;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -89,17 +94,33 @@ public class TelegramBotService{
             }
             case ("/gitpush"):{
                 CredentialsProvider cp = new UsernamePasswordCredentialsProvider("mage-wow@mail.ru", "mage7313");
-//                Git git = Git.cloneRepository()
-//                        .setURI("https://dobriyby2@bitbucket.org/MTband/cognive-microservices.git")
-//                        .setBranch("dev")
-//                        .setCredentialsProvider(cp)
-//                        .setDirectory(new File("/path/to/repo"))
-//                        .call();
                 Git git = Git.open(new File(""));
-                System.out.println(git.getRepository().getDirectory().getAbsolutePath());
-                git.branchList().call().forEach(branch -> System.out.println(branch.getName()));
-                RevCommit rev =  git.commit().setAuthor("Dobriy","mage-wow@mail.ru").setMessage("test cfffommit").call();
+                AddCommand add  = git.add();
+                Files.walk(Paths.get(""))
+                        .filter(Files::isRegularFile)
+                        .forEach(file -> {
+                            if(!file.toFile().getAbsolutePath().contains(".lck")){
+                                String name = Paths.get("").relativize(file.toFile().toPath()).toString();
+                                name = name.replace("..\\","").replace("\\","/");
+                                System.out.println(name);
+//                                String url = file.toFile().getAbsolutePath().replace("","");
+//                                System.out.println(url);
+                                add.addFilepattern(name);
+                            }else{
+                                    //System.out.println(file.toFile().getCanonicalPath());
+                            }
+                        });
+//                for (File file : folder.listFiles()) {
+//                    System.out.println(file.getAbsolutePath());
+//                    if ( !file.getAbsolutePath().contains(".lck") ){
+//                        add.addFilepattern(file.getAbsolutePath());
+//                    }else{
+//                        System.out.println(file.getAbsolutePath());
+//                    }                }
+                add.call();
+                RevCommit rev =  git.commit().setAuthor("Dobriy","mage-wow@mail.ru").setMessage("testdfommit").call();
                 git.push().setCredentialsProvider(cp).setPushAll().call();
+                System.out.println("Git push complate!");
                 break;
             }
             default:
