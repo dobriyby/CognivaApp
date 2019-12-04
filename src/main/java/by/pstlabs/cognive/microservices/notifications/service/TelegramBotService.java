@@ -78,7 +78,6 @@ public class TelegramBotService{
         index = index>-1?index:update.getMessage().getText().length();
         String command = update.getMessage().getText().substring(0,index);
         String text = update.getMessage().getText().replace(command,"");
-        System.out.println("Command: "+command+" text: "+text);
         switch (command) {
             case ("/listusers"): {
                 ArrayList<String> list = new ArrayList<String>();
