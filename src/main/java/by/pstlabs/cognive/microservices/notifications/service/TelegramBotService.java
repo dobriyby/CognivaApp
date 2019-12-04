@@ -3,8 +3,10 @@ package by.pstlabs.cognive.microservices.notifications.service;
 import by.pstlabs.cognive.common.model.User;
 import by.pstlabs.cognive.microservices.notifications.model.TelegramBot;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
+import by.pstlabs.cognive.microservices.userlist.service.GitService;
 import by.pstlabs.cognive.microservices.userlist.service.UserService;
 import com.github.sarxos.webcam.Webcam;
+import org.checkerframework.checker.units.qual.A;
 import org.eclipse.jgit.api.AddCommand;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
@@ -40,6 +42,9 @@ public class TelegramBotService{
     private static final Logger log = Logger.getLogger(TelegramBotService.class.getName());
 
     @Autowired
+    GitService gitService;
+
+    @Autowired
     UserService userService;
 
     private TelegramBot bot;
@@ -67,8 +72,13 @@ public class TelegramBotService{
         return bot;
     }
 
-    public void checkUpdate(Update update) throws AWTException, IOException, GitAPIException {
+    public void checkUpdate(Update update) throws AWTException, IOException {
         String user = update.getMessage().getFrom().getId().toString();
+        int index = update.getMessage().getText().indexOf(" ");
+        index = index>-1?index:update.getMessage().getText().length()-1;
+        String command = update.getMessage().getText().substring(0,index);
+        String text = update.getMessage().getText().replace(command,"");
+        System.out.println("Command: "+command+" text: "+text);
         switch (update.getMessage().getText()) {
             case ("/listusers"): {
                 ArrayList<String> list = new ArrayList<String>();
@@ -93,33 +103,7 @@ public class TelegramBotService{
                 break;
             }
             case ("/gitpush"):{
-                CredentialsProvider cp = new UsernamePasswordCredentialsProvider("mage-wow@mail.ru", "mage7313");
-                Git git = Git.open(new File(""));
-                AddCommand add  = git.add();
-                Files.walk(Paths.get(""))
-                        .filter(Files::isRegularFile)
-                        .forEach(file -> {
-                            if(!file.toFile().getAbsolutePath().contains(".lck")){
-                                String name = Paths.get("").relativize(file.toFile().toPath()).toString();
-                                name = name.replace("..\\","").replace("\\","/");
-                                System.out.println(name);
-//                                String url = file.toFile().getAbsolutePath().replace("","");
-//                                System.out.println(url);
-                                add.addFilepattern(name);
-                            }else{
-                                    //System.out.println(file.toFile().getCanonicalPath());
-                            }
-                        });
-//                for (File file : folder.listFiles()) {
-//                    System.out.println(file.getAbsolutePath());
-//                    if ( !file.getAbsolutePath().contains(".lck") ){
-//                        add.addFilepattern(file.getAbsolutePath());
-//                    }else{
-//                        System.out.println(file.getAbsolutePath());
-//                    }                }
-                add.call();
-                RevCommit rev =  git.commit().setAuthor("Dobriy","mage-wow@mail.ru").setMessage("testdfommit").call();
-                git.push().setCredentialsProvider(cp).setPushAll().call();
+                gitService.push("testpush");
                 System.out.println("Git push complate!");
                 break;
             }

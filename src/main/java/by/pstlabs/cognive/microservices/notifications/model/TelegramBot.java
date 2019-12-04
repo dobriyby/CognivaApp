@@ -79,7 +79,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         try {
             telegramBotService.checkUpdate(update);
-        } catch (AWTException | IOException | GitAPIException e) {
+        } catch (AWTException | IOException e) {
             e.printStackTrace();
         }
     }
