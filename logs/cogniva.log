@@ -3921,4 +3921,634 @@ Caused by: java.io.IOException: Процесс не может получить доступ к файлу, так ка
 ""2019-12-04 15:11:06 - Tomcat started on port(s): 8080 (http) with context path ''
 ""2019-12-04 15:11:06 - Started Application in 25.42 seconds (JVM running for 25.757)
 ""2019-12-04 15:11:06 - HHH000397: Using ASTQueryTranslatorFactory
+""2019-12-04 15:15:17 - Starting Application on aprybylski with PID 16408 (C:\Users\aprybylski\project\cognive-microservices\build\classes\java\main started by aprybylski in C:\Users\aprybylski\project\cognive-microservices)
+""2019-12-04 15:15:17 - No active profile set, falling back to default profiles: default
+""2019-12-04 15:15:17 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@57c758ac: startup date [Wed Dec 04 15:15:17 MSK 2019]; root of context hierarchy
+""2019-12-04 15:15:18 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-12-04 15:15:18 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a0dc5d2d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2019-12-04 15:15:18 - Tomcat initialized with port(s): 8080 (http)
+""2019-12-04 15:15:18 - Starting service [Tomcat]
+""2019-12-04 15:15:18 - Starting Servlet Engine: Apache Tomcat/8.5.34
+""2019-12-04 15:15:18 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_231\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;c:\Program Files\grade\gradle-6.0.1\bin\;C:\Users\aprybylski\AppData\Local\Microsoft\WindowsApps;C:\Users\aprybylski\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;;.]
+""2019-12-04 15:15:18 - Initializing Spring embedded WebApplicationContext
+""2019-12-04 15:15:18 - Root WebApplicationContext: initialization completed in 1647 ms
+""2019-12-04 15:15:19 - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-12-04 15:15:19 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-12-04 15:15:19 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2019-12-04 15:15:19 - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-12-04 15:15:19 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-12-04 15:15:19 - Servlet dispatcherServlet mapped to [/]
+""2019-12-04 15:15:19 - HikariPool-1 - Starting...
+""2019-12-04 15:15:20 - HikariPool-1 - Driver does not support get/set network timeout for connections. (Метод org.postgresql.jdbc.PgConnection.getNetworkTimeout() ещё не реализован)
+""2019-12-04 15:15:20 - HikariPool-1 - Start completed.
+""2019-12-04 15:15:20 - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:15:20 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2019-12-04 15:15:20 - HHH000412: Hibernate Core {5.2.17.Final}
+""2019-12-04 15:15:20 - HHH000206: hibernate.properties not found
+""2019-12-04 15:15:20 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2019-12-04 15:15:20 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2019-12-04 15:15:39 - HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+""2019-12-04 15:15:39 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6f798482
+""2019-12-04 15:15:41 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:15:42 - An INFO Message
+""2019-12-04 15:15:42 - A WARN Message
+""2019-12-04 15:15:42 - An ERROR Message
+""2019-12-04 15:15:42 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:15:42 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2019-12-04 15:15:43 - Mapped "{[/notification/sendMail],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.NotificationController.sendMailTest(by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest)
+""2019-12-04 15:15:43 - Mapped "{[/api/push/all],methods=[GET]}" onto java.util.List<by.pstlabs.cognive.microservices.notifications.model.Push> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush()
+""2019-12-04 15:15:43 - Mapped "{[/api/push/AddList],methods=[POST]}" onto void by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String)
+""2019-12-04 15:15:43 - Mapped "{[/api/push/AddPushToUserName],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.util.Map<java.lang.String, java.lang.String>) throws java.text.ParseException,java.io.IOException
+""2019-12-04 15:15:43 - Mapped "{[/api/push/AddPushForAllUser],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String,java.lang.String) throws java.text.ParseException
+""2019-12-04 15:15:43 - Mapped "{[/bot/send],methods=[GET]}" onto public void by.pstlabs.cognive.microservices.notifications.controller.rest.TelegramBotController.sendMessageTo(java.lang.String)
+""2019-12-04 15:15:43 - Mapped "{[/testException]}" onto public java.lang.String by.pstlabs.cognive.microservices.notifications.controller.rest.TestController.test(int)
+""2019-12-04 15:15:43 - Mapped "{[/banks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Bank>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllBanks()
+""2019-12-04 15:15:43 - Mapped "{[/banks/{bankId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Bank> by.pstlabs.cognive.microservices.userlist.controller.BankController.getBankById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:15:43 - Mapped "{[/banks/{bankId}/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllListsByBankId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:15:43 - Mapped "{[/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllLists()
+""2019-12-04 15:15:43 - Mapped "{[/lists/{listsId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getListById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:15:43 - Mapped "{[/lists],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.createLists(by.pstlabs.cognive.microservices.userlist.model.Lists)
+""2019-12-04 15:15:43 - Mapped "{[/lists/{listsId}/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.ListsController.addUserToList(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:15:43 - Mapped "{[/lists/{listsId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.updateLists(java.lang.Long,by.pstlabs.cognive.microservices.userlist.model.Lists) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:15:43 - Mapped "{[/lists/{listsId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteLists(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:15:43 - Mapped "{[/lists/{listsId}/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteUserFromList(java.lang.Long,java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:15:43 - Mapped "{[/lists/{listsId}/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllUsersByListsId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:15:43 - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.UserController.getAllUsers()
+""2019-12-04 15:15:43 - Mapped "{[/api/users/{userId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.UserController.updateUser(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:15:43 - Mapped "{[/api/users/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createUser(by.pstlabs.cognive.common.model.User) throws com.fasterxml.jackson.core.JsonProcessingException
+""2019-12-04 15:15:43 - Mapped "{[/api/roles/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createRole(java.lang.String)
+""2019-12-04 15:15:43 - Mapped "{[/api/roles],methods=[GET]}" onto public java.util.List<by.pstlabs.cognive.common.model.Role> by.pstlabs.cognive.microservices.userlist.controller.UserController.listRoles()
+""2019-12-04 15:15:43 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+""2019-12-04 15:15:43 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+""2019-12-04 15:15:43 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:15:43 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:15:43 - Adding welcome page: class path resource [static/index.html]
+""2019-12-04 15:15:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a01ffff, org.springframework.security.web.context.SecurityContextPersistenceFilter@503a7990, org.springframework.security.web.header.HeaderWriterFilter@1cc93da4, org.springframework.web.filter.CorsFilter@a99c42c, org.springframework.security.web.authentication.logout.LogoutFilter@3041beb3, by.pstlabs.cognive.common.login.filter.JwtAuthenticationFilter@2fa879ed, by.pstlabs.cognive.common.login.filter.JwtAuthorizationFilter@2b2b7e3c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6dcbbb49, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a120b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ec082a1, org.springframework.security.web.session.SessionManagementFilter@7e38e254, org.springframework.security.web.access.ExceptionTranslationFilter@39e3ea78, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7bce9ce4]
+""2019-12-04 15:15:43 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@57c758ac: startup date [Wed Dec 04 15:15:17 MSK 2019]; root of context hierarchy
+""2019-12-04 15:15:43 - Detected @ExceptionHandler methods in exceptionController
+""2019-12-04 15:15:43 - Registering beans for JMX exposure on startup
+""2019-12-04 15:15:43 - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2019-12-04 15:15:43 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2019-12-04 15:15:43 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2019-12-04 15:15:43 - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+""2019-12-04 15:15:43 - Tomcat started on port(s): 8080 (http) with context path ''
+""2019-12-04 15:15:43 - Started Application in 26.607 seconds (JVM running for 26.978)
+""2019-12-04 15:15:43 - HHH000397: Using ASTQueryTranslatorFactory
+""2019-12-04 15:22:36 - Starting Application on aprybylski with PID 9004 (C:\Users\aprybylski\project\cognive-microservices\build\classes\java\main started by aprybylski in C:\Users\aprybylski\project\cognive-microservices)
+""2019-12-04 15:22:36 - No active profile set, falling back to default profiles: default
+""2019-12-04 15:22:36 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@57c758ac: startup date [Wed Dec 04 15:22:36 MSK 2019]; root of context hierarchy
+""2019-12-04 15:22:37 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-12-04 15:22:37 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a7211e49] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2019-12-04 15:22:37 - Tomcat initialized with port(s): 8080 (http)
+""2019-12-04 15:22:37 - Starting service [Tomcat]
+""2019-12-04 15:22:37 - Starting Servlet Engine: Apache Tomcat/8.5.34
+""2019-12-04 15:22:37 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_231\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;c:\Program Files\grade\gradle-6.0.1\bin\;C:\Users\aprybylski\AppData\Local\Microsoft\WindowsApps;C:\Users\aprybylski\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;;.]
+""2019-12-04 15:22:37 - Initializing Spring embedded WebApplicationContext
+""2019-12-04 15:22:37 - Root WebApplicationContext: initialization completed in 1627 ms
+""2019-12-04 15:22:37 - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-12-04 15:22:37 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-12-04 15:22:37 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2019-12-04 15:22:37 - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-12-04 15:22:37 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-12-04 15:22:37 - Servlet dispatcherServlet mapped to [/]
+""2019-12-04 15:22:38 - HikariPool-1 - Starting...
+""2019-12-04 15:22:39 - HikariPool-1 - Driver does not support get/set network timeout for connections. (Метод org.postgresql.jdbc.PgConnection.getNetworkTimeout() ещё не реализован)
+""2019-12-04 15:22:39 - HikariPool-1 - Start completed.
+""2019-12-04 15:22:39 - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:22:39 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2019-12-04 15:22:39 - HHH000412: Hibernate Core {5.2.17.Final}
+""2019-12-04 15:22:39 - HHH000206: hibernate.properties not found
+""2019-12-04 15:22:39 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2019-12-04 15:22:39 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2019-12-04 15:23:00 - HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+""2019-12-04 15:23:00 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@28237492
+""2019-12-04 15:23:03 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:23:04 - An INFO Message
+""2019-12-04 15:23:04 - A WARN Message
+""2019-12-04 15:23:04 - An ERROR Message
+""2019-12-04 15:23:04 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:23:04 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2019-12-04 15:23:04 - Mapped "{[/notification/sendMail],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.NotificationController.sendMailTest(by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest)
+""2019-12-04 15:23:04 - Mapped "{[/api/push/all],methods=[GET]}" onto java.util.List<by.pstlabs.cognive.microservices.notifications.model.Push> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush()
+""2019-12-04 15:23:04 - Mapped "{[/api/push/AddList],methods=[POST]}" onto void by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String)
+""2019-12-04 15:23:04 - Mapped "{[/api/push/AddPushToUserName],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.util.Map<java.lang.String, java.lang.String>) throws java.text.ParseException,java.io.IOException
+""2019-12-04 15:23:04 - Mapped "{[/api/push/AddPushForAllUser],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String,java.lang.String) throws java.text.ParseException
+""2019-12-04 15:23:04 - Mapped "{[/bot/send],methods=[GET]}" onto public void by.pstlabs.cognive.microservices.notifications.controller.rest.TelegramBotController.sendMessageTo(java.lang.String)
+""2019-12-04 15:23:04 - Mapped "{[/testException]}" onto public java.lang.String by.pstlabs.cognive.microservices.notifications.controller.rest.TestController.test(int)
+""2019-12-04 15:23:04 - Mapped "{[/banks/{bankId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Bank> by.pstlabs.cognive.microservices.userlist.controller.BankController.getBankById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:23:04 - Mapped "{[/banks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Bank>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllBanks()
+""2019-12-04 15:23:04 - Mapped "{[/banks/{bankId}/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllListsByBankId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:23:04 - Mapped "{[/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllLists()
+""2019-12-04 15:23:04 - Mapped "{[/lists/{listsId}/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.ListsController.addUserToList(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:23:04 - Mapped "{[/lists],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.createLists(by.pstlabs.cognive.microservices.userlist.model.Lists)
+""2019-12-04 15:23:04 - Mapped "{[/lists/{listsId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.updateLists(java.lang.Long,by.pstlabs.cognive.microservices.userlist.model.Lists) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:23:04 - Mapped "{[/lists/{listsId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteLists(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:23:04 - Mapped "{[/lists/{listsId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getListById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:23:04 - Mapped "{[/lists/{listsId}/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteUserFromList(java.lang.Long,java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:23:04 - Mapped "{[/lists/{listsId}/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllUsersByListsId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:23:04 - Mapped "{[/api/roles],methods=[GET]}" onto public java.util.List<by.pstlabs.cognive.common.model.Role> by.pstlabs.cognive.microservices.userlist.controller.UserController.listRoles()
+""2019-12-04 15:23:04 - Mapped "{[/api/users/{userId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.UserController.updateUser(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:23:04 - Mapped "{[/api/roles/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createRole(java.lang.String)
+""2019-12-04 15:23:04 - Mapped "{[/api/users/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createUser(by.pstlabs.cognive.common.model.User) throws com.fasterxml.jackson.core.JsonProcessingException
+""2019-12-04 15:23:04 - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.UserController.getAllUsers()
+""2019-12-04 15:23:04 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+""2019-12-04 15:23:04 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+""2019-12-04 15:23:04 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:23:04 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:23:04 - Adding welcome page: class path resource [static/index.html]
+""2019-12-04 15:23:04 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@661db63e, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f1d799, org.springframework.security.web.header.HeaderWriterFilter@6dcbbb49, org.springframework.web.filter.CorsFilter@5cf2f5d6, org.springframework.security.web.authentication.logout.LogoutFilter@194037f9, by.pstlabs.cognive.common.login.filter.JwtAuthenticationFilter@429f0ca8, by.pstlabs.cognive.common.login.filter.JwtAuthorizationFilter@6b030101, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@a120b9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64c95480, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60a4e619, org.springframework.security.web.session.SessionManagementFilter@36c783ca, org.springframework.security.web.access.ExceptionTranslationFilter@7e38e254, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7769d9b6]
+""2019-12-04 15:23:04 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@57c758ac: startup date [Wed Dec 04 15:22:36 MSK 2019]; root of context hierarchy
+""2019-12-04 15:23:04 - Detected @ExceptionHandler methods in exceptionController
+""2019-12-04 15:23:05 - Registering beans for JMX exposure on startup
+""2019-12-04 15:23:05 - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2019-12-04 15:23:05 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2019-12-04 15:23:05 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2019-12-04 15:23:05 - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+""2019-12-04 15:23:05 - Tomcat started on port(s): 8080 (http) with context path ''
+""2019-12-04 15:23:05 - Started Application in 29.279 seconds (JVM running for 29.633)
+""2019-12-04 15:23:05 - HHH000397: Using ASTQueryTranslatorFactory
+""2019-12-04 15:23:31 - Exception caught during execution of add command
+"org.eclipse.jgit.api.errors.JGitInternalException: Exception caught during execution of add command
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:258)
+	at by.pstlabs.cognive.microservices.notifications.service.TelegramBotService.checkUpdate(TelegramBotService.java:102)
+	at by.pstlabs.cognive.microservices.notifications.model.TelegramBot.onUpdateReceived(TelegramBot.java:81)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+Caused by: java.io.IOException: Процесс не может получить доступ к файлу, так как часть этого файла заблокирована другим процессом
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at org.eclipse.jgit.util.IO.readFully(IO.java:290)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:141)
+	at org.eclipse.jgit.internal.storage.file.ObjectDirectoryInserter.insert(ObjectDirectoryInserter.java:122)
+	at org.eclipse.jgit.api.AddCommand.call(AddCommand.java:240)
+	... 5 common frames omitted
+"2019-12-04 15:45:10 - Starting Application on aprybylski with PID 15100 (C:\Users\aprybylski\project\cognive-microservices\build\classes\java\main started by aprybylski in C:\Users\aprybylski\project\cognive-microservices)
+""2019-12-04 15:45:10 - No active profile set, falling back to default profiles: default
+""2019-12-04 15:45:10 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4ac3c60d: startup date [Wed Dec 04 15:45:10 MSK 2019]; root of context hierarchy
+""2019-12-04 15:45:11 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-12-04 15:45:11 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8314102b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2019-12-04 15:45:11 - Tomcat initialized with port(s): 8080 (http)
+""2019-12-04 15:45:11 - Starting service [Tomcat]
+""2019-12-04 15:45:11 - Starting Servlet Engine: Apache Tomcat/8.5.34
+""2019-12-04 15:45:11 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_231\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;c:\Program Files\grade\gradle-6.0.1\bin\;C:\Users\aprybylski\AppData\Local\Microsoft\WindowsApps;C:\Users\aprybylski\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;;.]
+""2019-12-04 15:45:12 - Initializing Spring embedded WebApplicationContext
+""2019-12-04 15:45:12 - Root WebApplicationContext: initialization completed in 1665 ms
+""2019-12-04 15:45:12 - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-12-04 15:45:12 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-12-04 15:45:12 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2019-12-04 15:45:12 - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-12-04 15:45:12 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-12-04 15:45:12 - Servlet dispatcherServlet mapped to [/]
+""2019-12-04 15:45:12 - HikariPool-1 - Starting...
+""2019-12-04 15:45:13 - HikariPool-1 - Driver does not support get/set network timeout for connections. (Метод org.postgresql.jdbc.PgConnection.getNetworkTimeout() ещё не реализован)
+""2019-12-04 15:45:13 - HikariPool-1 - Start completed.
+""2019-12-04 15:45:13 - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:45:13 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2019-12-04 15:45:13 - HHH000412: Hibernate Core {5.2.17.Final}
+""2019-12-04 15:45:13 - HHH000206: hibernate.properties not found
+""2019-12-04 15:45:13 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2019-12-04 15:45:13 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2019-12-04 15:45:31 - HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+""2019-12-04 15:45:31 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@11f9535b
+""2019-12-04 15:45:33 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:45:35 - An INFO Message
+""2019-12-04 15:45:35 - A WARN Message
+""2019-12-04 15:45:35 - An ERROR Message
+""2019-12-04 15:45:35 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:45:35 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2019-12-04 15:45:35 - Mapped "{[/notification/sendMail],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.NotificationController.sendMailTest(by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest)
+""2019-12-04 15:45:35 - Mapped "{[/api/push/all],methods=[GET]}" onto java.util.List<by.pstlabs.cognive.microservices.notifications.model.Push> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush()
+""2019-12-04 15:45:35 - Mapped "{[/api/push/AddList],methods=[POST]}" onto void by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String)
+""2019-12-04 15:45:35 - Mapped "{[/api/push/AddPushToUserName],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.util.Map<java.lang.String, java.lang.String>) throws java.text.ParseException,java.io.IOException
+""2019-12-04 15:45:35 - Mapped "{[/api/push/AddPushForAllUser],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String,java.lang.String) throws java.text.ParseException
+""2019-12-04 15:45:35 - Mapped "{[/bot/send],methods=[GET]}" onto public void by.pstlabs.cognive.microservices.notifications.controller.rest.TelegramBotController.sendMessageTo(java.lang.String)
+""2019-12-04 15:45:35 - Mapped "{[/testException]}" onto public java.lang.String by.pstlabs.cognive.microservices.notifications.controller.rest.TestController.test(int)
+""2019-12-04 15:45:35 - Mapped "{[/banks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Bank>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllBanks()
+""2019-12-04 15:45:35 - Mapped "{[/banks/{bankId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Bank> by.pstlabs.cognive.microservices.userlist.controller.BankController.getBankById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:45:35 - Mapped "{[/banks/{bankId}/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllListsByBankId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:45:35 - Mapped "{[/lists/{listsId}/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.ListsController.addUserToList(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:45:35 - Mapped "{[/lists/{listsId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getListById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:45:35 - Mapped "{[/lists],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.createLists(by.pstlabs.cognive.microservices.userlist.model.Lists)
+""2019-12-04 15:45:35 - Mapped "{[/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllLists()
+""2019-12-04 15:45:35 - Mapped "{[/lists/{listsId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.updateLists(java.lang.Long,by.pstlabs.cognive.microservices.userlist.model.Lists) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:45:35 - Mapped "{[/lists/{listsId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteLists(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:45:35 - Mapped "{[/lists/{listsId}/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllUsersByListsId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:45:35 - Mapped "{[/lists/{listsId}/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteUserFromList(java.lang.Long,java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:45:35 - Mapped "{[/api/roles/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createRole(java.lang.String)
+""2019-12-04 15:45:35 - Mapped "{[/api/roles],methods=[GET]}" onto public java.util.List<by.pstlabs.cognive.common.model.Role> by.pstlabs.cognive.microservices.userlist.controller.UserController.listRoles()
+""2019-12-04 15:45:35 - Mapped "{[/api/users/{userId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.UserController.updateUser(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:45:35 - Mapped "{[/api/users/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createUser(by.pstlabs.cognive.common.model.User) throws com.fasterxml.jackson.core.JsonProcessingException
+""2019-12-04 15:45:35 - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.UserController.getAllUsers()
+""2019-12-04 15:45:35 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+""2019-12-04 15:45:35 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+""2019-12-04 15:45:35 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:45:35 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:45:35 - Adding welcome page: class path resource [static/index.html]
+""2019-12-04 15:45:35 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ec8d9b2, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a43a88e, org.springframework.security.web.header.HeaderWriterFilter@5fbae40, org.springframework.web.filter.CorsFilter@57b63253, org.springframework.security.web.authentication.logout.LogoutFilter@23ec2bdc, by.pstlabs.cognive.common.login.filter.JwtAuthenticationFilter@c0013b8, by.pstlabs.cognive.common.login.filter.JwtAuthorizationFilter@2c1ea7be, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b8d20e6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75a226ea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2493eec6, org.springframework.security.web.session.SessionManagementFilter@67f591c2, org.springframework.security.web.access.ExceptionTranslationFilter@71b3ba5a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5feb82b3]
+""2019-12-04 15:45:35 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4ac3c60d: startup date [Wed Dec 04 15:45:10 MSK 2019]; root of context hierarchy
+""2019-12-04 15:45:35 - Detected @ExceptionHandler methods in exceptionController
+""2019-12-04 15:45:36 - Registering beans for JMX exposure on startup
+""2019-12-04 15:45:36 - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2019-12-04 15:45:36 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2019-12-04 15:45:36 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2019-12-04 15:45:36 - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+""2019-12-04 15:45:36 - Tomcat started on port(s): 8080 (http) with context path ''
+""2019-12-04 15:45:36 - Started Application in 26.165 seconds (JVM running for 26.508)
+""2019-12-04 15:45:36 - HHH000397: Using ASTQueryTranslatorFactory
+""2019-12-04 15:45:39 - null
+"java.lang.NullPointerException: null
+	at by.pstlabs.cognive.microservices.notifications.service.TelegramBotService.checkUpdate(TelegramBotService.java:96)
+	at by.pstlabs.cognive.microservices.notifications.model.TelegramBot.onUpdateReceived(TelegramBot.java:81)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+"2019-12-04 15:46:57 - Starting Application on aprybylski with PID 6836 (C:\Users\aprybylski\project\cognive-microservices\build\classes\java\main started by aprybylski in C:\Users\aprybylski\project\cognive-microservices)
+""2019-12-04 15:46:57 - No active profile set, falling back to default profiles: default
+""2019-12-04 15:46:57 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1700915: startup date [Wed Dec 04 15:46:57 MSK 2019]; root of context hierarchy
+""2019-12-04 15:46:58 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-12-04 15:46:58 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2c6f84c8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2019-12-04 15:46:58 - Tomcat initialized with port(s): 8080 (http)
+""2019-12-04 15:46:58 - Starting service [Tomcat]
+""2019-12-04 15:46:58 - Starting Servlet Engine: Apache Tomcat/8.5.34
+""2019-12-04 15:46:58 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_231\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;c:\Program Files\grade\gradle-6.0.1\bin\;C:\Users\aprybylski\AppData\Local\Microsoft\WindowsApps;C:\Users\aprybylski\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;;.]
+""2019-12-04 15:46:59 - Initializing Spring embedded WebApplicationContext
+""2019-12-04 15:46:59 - Root WebApplicationContext: initialization completed in 1701 ms
+""2019-12-04 15:46:59 - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-12-04 15:46:59 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-12-04 15:46:59 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2019-12-04 15:46:59 - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-12-04 15:46:59 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-12-04 15:46:59 - Servlet dispatcherServlet mapped to [/]
+""2019-12-04 15:46:59 - HikariPool-1 - Starting...
+""2019-12-04 15:47:00 - HikariPool-1 - Driver does not support get/set network timeout for connections. (Метод org.postgresql.jdbc.PgConnection.getNetworkTimeout() ещё не реализован)
+""2019-12-04 15:47:00 - HikariPool-1 - Start completed.
+""2019-12-04 15:47:00 - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:47:00 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2019-12-04 15:47:00 - HHH000412: Hibernate Core {5.2.17.Final}
+""2019-12-04 15:47:00 - HHH000206: hibernate.properties not found
+""2019-12-04 15:47:00 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2019-12-04 15:47:00 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2019-12-04 15:47:17 - HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+""2019-12-04 15:47:17 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7c3e4b1a
+""2019-12-04 15:47:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:47:20 - An INFO Message
+""2019-12-04 15:47:20 - A WARN Message
+""2019-12-04 15:47:20 - An ERROR Message
+""2019-12-04 15:47:20 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:47:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2019-12-04 15:47:20 - Mapped "{[/notification/sendMail],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.NotificationController.sendMailTest(by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest)
+""2019-12-04 15:47:20 - Mapped "{[/api/push/all],methods=[GET]}" onto java.util.List<by.pstlabs.cognive.microservices.notifications.model.Push> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush()
+""2019-12-04 15:47:20 - Mapped "{[/api/push/AddList],methods=[POST]}" onto void by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String)
+""2019-12-04 15:47:20 - Mapped "{[/api/push/AddPushToUserName],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.util.Map<java.lang.String, java.lang.String>) throws java.text.ParseException,java.io.IOException
+""2019-12-04 15:47:20 - Mapped "{[/api/push/AddPushForAllUser],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String,java.lang.String) throws java.text.ParseException
+""2019-12-04 15:47:20 - Mapped "{[/bot/send],methods=[GET]}" onto public void by.pstlabs.cognive.microservices.notifications.controller.rest.TelegramBotController.sendMessageTo(java.lang.String)
+""2019-12-04 15:47:20 - Mapped "{[/testException]}" onto public java.lang.String by.pstlabs.cognive.microservices.notifications.controller.rest.TestController.test(int)
+""2019-12-04 15:47:20 - Mapped "{[/banks/{bankId}/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllListsByBankId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:47:20 - Mapped "{[/banks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Bank>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllBanks()
+""2019-12-04 15:47:20 - Mapped "{[/banks/{bankId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Bank> by.pstlabs.cognive.microservices.userlist.controller.BankController.getBankById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:47:20 - Mapped "{[/lists/{listsId}/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllUsersByListsId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:47:20 - Mapped "{[/lists/{listsId}/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteUserFromList(java.lang.Long,java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:47:20 - Mapped "{[/lists/{listsId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteLists(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:47:20 - Mapped "{[/lists/{listsId}/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.ListsController.addUserToList(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:47:20 - Mapped "{[/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllLists()
+""2019-12-04 15:47:20 - Mapped "{[/lists],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.createLists(by.pstlabs.cognive.microservices.userlist.model.Lists)
+""2019-12-04 15:47:20 - Mapped "{[/lists/{listsId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.updateLists(java.lang.Long,by.pstlabs.cognive.microservices.userlist.model.Lists) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:47:20 - Mapped "{[/lists/{listsId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getListById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:47:20 - Mapped "{[/api/users/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createUser(by.pstlabs.cognive.common.model.User) throws com.fasterxml.jackson.core.JsonProcessingException
+""2019-12-04 15:47:20 - Mapped "{[/api/roles],methods=[GET]}" onto public java.util.List<by.pstlabs.cognive.common.model.Role> by.pstlabs.cognive.microservices.userlist.controller.UserController.listRoles()
+""2019-12-04 15:47:20 - Mapped "{[/api/users/{userId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.UserController.updateUser(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:47:20 - Mapped "{[/api/roles/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createRole(java.lang.String)
+""2019-12-04 15:47:20 - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.UserController.getAllUsers()
+""2019-12-04 15:47:20 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+""2019-12-04 15:47:20 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+""2019-12-04 15:47:20 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:47:20 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:47:20 - Adding welcome page: class path resource [static/index.html]
+""2019-12-04 15:47:20 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11f3400c, org.springframework.security.web.context.SecurityContextPersistenceFilter@2804b13f, org.springframework.security.web.header.HeaderWriterFilter@ca2cd5e, org.springframework.web.filter.CorsFilter@628b503a, org.springframework.security.web.authentication.logout.LogoutFilter@2f9addd4, by.pstlabs.cognive.common.login.filter.JwtAuthenticationFilter@2558f65c, by.pstlabs.cognive.common.login.filter.JwtAuthorizationFilter@11c3ce6a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ac417a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2e40fdbd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a3b1f7e, org.springframework.security.web.session.SessionManagementFilter@333e5fb6, org.springframework.security.web.access.ExceptionTranslationFilter@35329a05, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4ca0b9b1]
+""2019-12-04 15:47:21 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1700915: startup date [Wed Dec 04 15:46:57 MSK 2019]; root of context hierarchy
+""2019-12-04 15:47:21 - Detected @ExceptionHandler methods in exceptionController
+""2019-12-04 15:47:21 - Registering beans for JMX exposure on startup
+""2019-12-04 15:47:21 - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2019-12-04 15:47:21 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2019-12-04 15:47:21 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2019-12-04 15:47:21 - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+""2019-12-04 15:47:21 - Tomcat started on port(s): 8080 (http) with context path ''
+""2019-12-04 15:47:21 - Started Application in 24.376 seconds (JVM running for 24.715)
+""2019-12-04 15:47:21 - HHH000397: Using ASTQueryTranslatorFactory
+""2019-12-04 15:47:25 - null
+"java.lang.NullPointerException: null
+	at by.pstlabs.cognive.microservices.notifications.service.TelegramBotService.checkUpdate(TelegramBotService.java:98)
+	at by.pstlabs.cognive.microservices.notifications.model.TelegramBot.onUpdateReceived(TelegramBot.java:81)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:312)
+"2019-12-04 15:54:19 - Starting Application on aprybylski with PID 6336 (C:\Users\aprybylski\project\cognive-microservices\build\classes\java\main started by aprybylski in C:\Users\aprybylski\project\cognive-microservices)
+""2019-12-04 15:54:19 - No active profile set, falling back to default profiles: default
+""2019-12-04 15:54:19 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1ddf84b8: startup date [Wed Dec 04 15:54:19 MSK 2019]; root of context hierarchy
+""2019-12-04 15:54:20 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-12-04 15:54:20 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cd0418f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2019-12-04 15:54:21 - Tomcat initialized with port(s): 8080 (http)
+""2019-12-04 15:54:21 - Starting service [Tomcat]
+""2019-12-04 15:54:21 - Starting Servlet Engine: Apache Tomcat/8.5.34
+""2019-12-04 15:54:21 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_231\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;c:\Program Files\grade\gradle-6.0.1\bin\;C:\Users\aprybylski\AppData\Local\Microsoft\WindowsApps;C:\Users\aprybylski\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;;.]
+""2019-12-04 15:54:21 - Initializing Spring embedded WebApplicationContext
+""2019-12-04 15:54:21 - Root WebApplicationContext: initialization completed in 1627 ms
+""2019-12-04 15:54:21 - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-12-04 15:54:21 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-12-04 15:54:21 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2019-12-04 15:54:21 - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-12-04 15:54:21 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-12-04 15:54:21 - Servlet dispatcherServlet mapped to [/]
+""2019-12-04 15:54:21 - HikariPool-1 - Starting...
+""2019-12-04 15:54:22 - HikariPool-1 - Driver does not support get/set network timeout for connections. (Метод org.postgresql.jdbc.PgConnection.getNetworkTimeout() ещё не реализован)
+""2019-12-04 15:54:22 - HikariPool-1 - Start completed.
+""2019-12-04 15:54:22 - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:54:22 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2019-12-04 15:54:22 - HHH000412: Hibernate Core {5.2.17.Final}
+""2019-12-04 15:54:22 - HHH000206: hibernate.properties not found
+""2019-12-04 15:54:22 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2019-12-04 15:54:23 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2019-12-04 15:54:40 - HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+""2019-12-04 15:54:40 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@42a0501e
+""2019-12-04 15:54:42 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:54:43 - An INFO Message
+""2019-12-04 15:54:43 - A WARN Message
+""2019-12-04 15:54:43 - An ERROR Message
+""2019-12-04 15:54:43 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:54:43 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2019-12-04 15:54:43 - Mapped "{[/notification/sendMail],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.NotificationController.sendMailTest(by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest)
+""2019-12-04 15:54:43 - Mapped "{[/api/push/all],methods=[GET]}" onto java.util.List<by.pstlabs.cognive.microservices.notifications.model.Push> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush()
+""2019-12-04 15:54:43 - Mapped "{[/api/push/AddList],methods=[POST]}" onto void by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String)
+""2019-12-04 15:54:43 - Mapped "{[/api/push/AddPushToUserName],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.util.Map<java.lang.String, java.lang.String>) throws java.text.ParseException,java.io.IOException
+""2019-12-04 15:54:43 - Mapped "{[/api/push/AddPushForAllUser],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String,java.lang.String) throws java.text.ParseException
+""2019-12-04 15:54:43 - Mapped "{[/bot/send],methods=[GET]}" onto public void by.pstlabs.cognive.microservices.notifications.controller.rest.TelegramBotController.sendMessageTo(java.lang.String)
+""2019-12-04 15:54:43 - Mapped "{[/testException]}" onto public java.lang.String by.pstlabs.cognive.microservices.notifications.controller.rest.TestController.test(int)
+""2019-12-04 15:54:43 - Mapped "{[/banks/{bankId}/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllListsByBankId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:54:43 - Mapped "{[/banks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Bank>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllBanks()
+""2019-12-04 15:54:43 - Mapped "{[/banks/{bankId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Bank> by.pstlabs.cognive.microservices.userlist.controller.BankController.getBankById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:54:43 - Mapped "{[/lists/{listsId}/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteUserFromList(java.lang.Long,java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:54:43 - Mapped "{[/lists/{listsId}/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllUsersByListsId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:54:43 - Mapped "{[/lists/{listsId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getListById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:54:43 - Mapped "{[/lists],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.createLists(by.pstlabs.cognive.microservices.userlist.model.Lists)
+""2019-12-04 15:54:43 - Mapped "{[/lists/{listsId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.updateLists(java.lang.Long,by.pstlabs.cognive.microservices.userlist.model.Lists) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:54:43 - Mapped "{[/lists/{listsId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteLists(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:54:43 - Mapped "{[/lists/{listsId}/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.ListsController.addUserToList(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:54:43 - Mapped "{[/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllLists()
+""2019-12-04 15:54:43 - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.UserController.getAllUsers()
+""2019-12-04 15:54:43 - Mapped "{[/api/roles],methods=[GET]}" onto public java.util.List<by.pstlabs.cognive.common.model.Role> by.pstlabs.cognive.microservices.userlist.controller.UserController.listRoles()
+""2019-12-04 15:54:43 - Mapped "{[/api/users/{userId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.UserController.updateUser(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:54:43 - Mapped "{[/api/users/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createUser(by.pstlabs.cognive.common.model.User) throws com.fasterxml.jackson.core.JsonProcessingException
+""2019-12-04 15:54:43 - Mapped "{[/api/roles/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createRole(java.lang.String)
+""2019-12-04 15:54:43 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+""2019-12-04 15:54:43 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+""2019-12-04 15:54:43 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:54:43 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:54:43 - Adding welcome page: class path resource [static/index.html]
+""2019-12-04 15:54:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@428eb3d5, org.springframework.security.web.context.SecurityContextPersistenceFilter@194037f9, org.springframework.security.web.header.HeaderWriterFilter@2e40fdbd, org.springframework.web.filter.CorsFilter@5ddd84d2, org.springframework.security.web.authentication.logout.LogoutFilter@51f34185, by.pstlabs.cognive.common.login.filter.JwtAuthenticationFilter@3fd5d679, by.pstlabs.cognive.common.login.filter.JwtAuthorizationFilter@7aa15a80, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17003497, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71b3ba5a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d065e1a, org.springframework.security.web.session.SessionManagementFilter@19647566, org.springframework.security.web.access.ExceptionTranslationFilter@69499c6f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@63c84d31]
+""2019-12-04 15:54:43 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1ddf84b8: startup date [Wed Dec 04 15:54:19 MSK 2019]; root of context hierarchy
+""2019-12-04 15:54:44 - Detected @ExceptionHandler methods in exceptionController
+""2019-12-04 15:54:44 - Registering beans for JMX exposure on startup
+""2019-12-04 15:54:44 - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2019-12-04 15:54:44 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2019-12-04 15:54:44 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2019-12-04 15:54:44 - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+""2019-12-04 15:54:44 - Tomcat started on port(s): 8080 (http) with context path ''
+""2019-12-04 15:54:44 - Started Application in 24.658 seconds (JVM running for 24.98)
+""2019-12-04 15:54:44 - HHH000397: Using ASTQueryTranslatorFactory
+""2019-12-04 15:57:51 - Starting Application on aprybylski with PID 11336 (C:\Users\aprybylski\project\cognive-microservices\build\classes\java\main started by aprybylski in C:\Users\aprybylski\project\cognive-microservices)
+""2019-12-04 15:57:51 - No active profile set, falling back to default profiles: default
+""2019-12-04 15:57:51 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@e056f20: startup date [Wed Dec 04 15:57:51 MSK 2019]; root of context hierarchy
+""2019-12-04 15:57:52 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-12-04 15:57:52 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a091b39d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2019-12-04 15:57:52 - Tomcat initialized with port(s): 8080 (http)
+""2019-12-04 15:57:52 - Starting service [Tomcat]
+""2019-12-04 15:57:52 - Starting Servlet Engine: Apache Tomcat/8.5.34
+""2019-12-04 15:57:52 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_231\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;c:\Program Files\grade\gradle-6.0.1\bin\;C:\Users\aprybylski\AppData\Local\Microsoft\WindowsApps;C:\Users\aprybylski\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;;.]
+""2019-12-04 15:57:52 - Initializing Spring embedded WebApplicationContext
+""2019-12-04 15:57:52 - Root WebApplicationContext: initialization completed in 1626 ms
+""2019-12-04 15:57:52 - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-12-04 15:57:52 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-12-04 15:57:52 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2019-12-04 15:57:52 - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-12-04 15:57:52 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-12-04 15:57:52 - Servlet dispatcherServlet mapped to [/]
+""2019-12-04 15:57:53 - HikariPool-1 - Starting...
+""2019-12-04 15:57:54 - HikariPool-1 - Driver does not support get/set network timeout for connections. (Метод org.postgresql.jdbc.PgConnection.getNetworkTimeout() ещё не реализован)
+""2019-12-04 15:57:54 - HikariPool-1 - Start completed.
+""2019-12-04 15:57:54 - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:57:54 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2019-12-04 15:57:54 - HHH000412: Hibernate Core {5.2.17.Final}
+""2019-12-04 15:57:54 - HHH000206: hibernate.properties not found
+""2019-12-04 15:57:54 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2019-12-04 15:57:54 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2019-12-04 15:58:12 - HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+""2019-12-04 15:58:12 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@ba17be6
+""2019-12-04 15:58:14 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2019-12-04 15:58:15 - An INFO Message
+""2019-12-04 15:58:15 - A WARN Message
+""2019-12-04 15:58:15 - An ERROR Message
+""2019-12-04 15:58:15 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:58:15 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2019-12-04 15:58:15 - Mapped "{[/notification/sendMail],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.NotificationController.sendMailTest(by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest)
+""2019-12-04 15:58:15 - Mapped "{[/api/push/all],methods=[GET]}" onto java.util.List<by.pstlabs.cognive.microservices.notifications.model.Push> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush()
+""2019-12-04 15:58:15 - Mapped "{[/api/push/AddList],methods=[POST]}" onto void by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String)
+""2019-12-04 15:58:15 - Mapped "{[/api/push/AddPushToUserName],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.util.Map<java.lang.String, java.lang.String>) throws java.text.ParseException,java.io.IOException
+""2019-12-04 15:58:15 - Mapped "{[/api/push/AddPushForAllUser],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String,java.lang.String) throws java.text.ParseException
+""2019-12-04 15:58:15 - Mapped "{[/bot/send],methods=[GET]}" onto public void by.pstlabs.cognive.microservices.notifications.controller.rest.TelegramBotController.sendMessageTo(java.lang.String)
+""2019-12-04 15:58:15 - Mapped "{[/testException]}" onto public java.lang.String by.pstlabs.cognive.microservices.notifications.controller.rest.TestController.test(int)
+""2019-12-04 15:58:15 - Mapped "{[/banks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Bank>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllBanks()
+""2019-12-04 15:58:15 - Mapped "{[/banks/{bankId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Bank> by.pstlabs.cognive.microservices.userlist.controller.BankController.getBankById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:58:15 - Mapped "{[/banks/{bankId}/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllListsByBankId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:58:15 - Mapped "{[/lists/{listsId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteLists(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:58:15 - Mapped "{[/lists/{listsId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getListById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:58:15 - Mapped "{[/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllLists()
+""2019-12-04 15:58:15 - Mapped "{[/lists],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.createLists(by.pstlabs.cognive.microservices.userlist.model.Lists)
+""2019-12-04 15:58:15 - Mapped "{[/lists/{listsId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.updateLists(java.lang.Long,by.pstlabs.cognive.microservices.userlist.model.Lists) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:58:15 - Mapped "{[/lists/{listsId}/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.ListsController.addUserToList(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:58:15 - Mapped "{[/lists/{listsId}/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllUsersByListsId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:58:15 - Mapped "{[/lists/{listsId}/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteUserFromList(java.lang.Long,java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:58:15 - Mapped "{[/api/roles/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createRole(java.lang.String)
+""2019-12-04 15:58:15 - Mapped "{[/api/roles],methods=[GET]}" onto public java.util.List<by.pstlabs.cognive.common.model.Role> by.pstlabs.cognive.microservices.userlist.controller.UserController.listRoles()
+""2019-12-04 15:58:15 - Mapped "{[/api/users/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createUser(by.pstlabs.cognive.common.model.User) throws com.fasterxml.jackson.core.JsonProcessingException
+""2019-12-04 15:58:15 - Mapped "{[/api/users/{userId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.UserController.updateUser(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 15:58:15 - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.UserController.getAllUsers()
+""2019-12-04 15:58:15 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+""2019-12-04 15:58:15 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+""2019-12-04 15:58:15 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:58:15 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 15:58:15 - Adding welcome page: class path resource [static/index.html]
+""2019-12-04 15:58:15 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2fa879ed, org.springframework.security.web.context.SecurityContextPersistenceFilter@6dcbbb49, org.springframework.security.web.header.HeaderWriterFilter@7e38e254, org.springframework.web.filter.CorsFilter@2b2b7e3c, org.springframework.security.web.authentication.logout.LogoutFilter@2e40fdbd, by.pstlabs.cognive.common.login.filter.JwtAuthenticationFilter@3ec082a1, by.pstlabs.cognive.common.login.filter.JwtAuthorizationFilter@7a3c99f1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36c783ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b7b0b57, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@16b7e04a, org.springframework.security.web.session.SessionManagementFilter@2e4ecdf8, org.springframework.security.web.access.ExceptionTranslationFilter@43b6cb1c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3b33fff9]
+""2019-12-04 15:58:16 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@e056f20: startup date [Wed Dec 04 15:57:51 MSK 2019]; root of context hierarchy
+""2019-12-04 15:58:16 - Detected @ExceptionHandler methods in exceptionController
+""2019-12-04 15:58:16 - Registering beans for JMX exposure on startup
+""2019-12-04 15:58:16 - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2019-12-04 15:58:16 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2019-12-04 15:58:16 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2019-12-04 15:58:16 - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+""2019-12-04 15:58:16 - Tomcat started on port(s): 8080 (http) with context path ''
+""2019-12-04 15:58:16 - Started Application in 25.347 seconds (JVM running for 25.684)
+""2019-12-04 15:58:16 - HHH000397: Using ASTQueryTranslatorFactory
+""2019-12-04 16:28:54 - Starting Application on aprybylski with PID 5064 (C:\Users\aprybylski\project\cognive-microservices\build\classes\java\main started by aprybylski in C:\Users\aprybylski\project\cognive-microservices)
+""2019-12-04 16:28:54 - No active profile set, falling back to default profiles: default
+""2019-12-04 16:28:54 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@e056f20: startup date [Wed Dec 04 16:28:54 MSK 2019]; root of context hierarchy
+""2019-12-04 16:28:55 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-12-04 16:28:55 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d0fbea5d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2019-12-04 16:28:55 - Tomcat initialized with port(s): 8080 (http)
+""2019-12-04 16:28:55 - Starting service [Tomcat]
+""2019-12-04 16:28:55 - Starting Servlet Engine: Apache Tomcat/8.5.34
+""2019-12-04 16:28:55 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_231\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;c:\Program Files\grade\gradle-6.0.1\bin\;C:\Users\aprybylski\AppData\Local\Microsoft\WindowsApps;C:\Users\aprybylski\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;;.]
+""2019-12-04 16:28:55 - Initializing Spring embedded WebApplicationContext
+""2019-12-04 16:28:55 - Root WebApplicationContext: initialization completed in 1732 ms
+""2019-12-04 16:28:55 - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-12-04 16:28:55 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-12-04 16:28:55 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2019-12-04 16:28:55 - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-12-04 16:28:55 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-12-04 16:28:55 - Servlet dispatcherServlet mapped to [/]
+""2019-12-04 16:28:56 - HikariPool-1 - Starting...
+""2019-12-04 16:28:56 - HikariPool-1 - Driver does not support get/set network timeout for connections. (Метод org.postgresql.jdbc.PgConnection.getNetworkTimeout() ещё не реализован)
+""2019-12-04 16:28:57 - HikariPool-1 - Start completed.
+""2019-12-04 16:28:57 - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2019-12-04 16:28:57 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2019-12-04 16:28:57 - HHH000412: Hibernate Core {5.2.17.Final}
+""2019-12-04 16:28:57 - HHH000206: hibernate.properties not found
+""2019-12-04 16:28:57 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2019-12-04 16:28:57 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2019-12-04 16:29:17 - HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+""2019-12-04 16:29:17 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@f1f7db2
+""2019-12-04 16:29:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2019-12-04 16:29:20 - An INFO Message
+""2019-12-04 16:29:20 - A WARN Message
+""2019-12-04 16:29:20 - An ERROR Message
+""2019-12-04 16:29:21 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 16:29:21 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2019-12-04 16:29:21 - Mapped "{[/notification/sendMail],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.NotificationController.sendMailTest(by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest)
+""2019-12-04 16:29:21 - Mapped "{[/api/push/all],methods=[GET]}" onto java.util.List<by.pstlabs.cognive.microservices.notifications.model.Push> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush()
+""2019-12-04 16:29:21 - Mapped "{[/api/push/AddList],methods=[POST]}" onto void by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String)
+""2019-12-04 16:29:21 - Mapped "{[/api/push/AddPushToUserName],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.util.Map<java.lang.String, java.lang.String>) throws java.text.ParseException,java.io.IOException
+""2019-12-04 16:29:21 - Mapped "{[/api/push/AddPushForAllUser],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String,java.lang.String) throws java.text.ParseException
+""2019-12-04 16:29:21 - Mapped "{[/bot/send],methods=[GET]}" onto public void by.pstlabs.cognive.microservices.notifications.controller.rest.TelegramBotController.sendMessageTo(java.lang.String)
+""2019-12-04 16:29:21 - Mapped "{[/testException]}" onto public java.lang.String by.pstlabs.cognive.microservices.notifications.controller.rest.TestController.test(int)
+""2019-12-04 16:29:21 - Mapped "{[/banks/{bankId}/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllListsByBankId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:29:21 - Mapped "{[/banks/{bankId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Bank> by.pstlabs.cognive.microservices.userlist.controller.BankController.getBankById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:29:21 - Mapped "{[/banks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Bank>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllBanks()
+""2019-12-04 16:29:21 - Mapped "{[/lists/{listsId}/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteUserFromList(java.lang.Long,java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:29:21 - Mapped "{[/lists/{listsId}/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllUsersByListsId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:29:21 - Mapped "{[/lists],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.createLists(by.pstlabs.cognive.microservices.userlist.model.Lists)
+""2019-12-04 16:29:21 - Mapped "{[/lists/{listsId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.updateLists(java.lang.Long,by.pstlabs.cognive.microservices.userlist.model.Lists) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:29:21 - Mapped "{[/lists/{listsId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteLists(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:29:21 - Mapped "{[/lists/{listsId}/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.ListsController.addUserToList(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:29:21 - Mapped "{[/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllLists()
+""2019-12-04 16:29:21 - Mapped "{[/lists/{listsId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getListById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:29:21 - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.UserController.getAllUsers()
+""2019-12-04 16:29:21 - Mapped "{[/api/users/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createUser(by.pstlabs.cognive.common.model.User) throws com.fasterxml.jackson.core.JsonProcessingException
+""2019-12-04 16:29:21 - Mapped "{[/api/users/{userId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.UserController.updateUser(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:29:21 - Mapped "{[/api/roles/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createRole(java.lang.String)
+""2019-12-04 16:29:21 - Mapped "{[/api/roles],methods=[GET]}" onto public java.util.List<by.pstlabs.cognive.common.model.Role> by.pstlabs.cognive.microservices.userlist.controller.UserController.listRoles()
+""2019-12-04 16:29:21 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+""2019-12-04 16:29:21 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+""2019-12-04 16:29:21 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 16:29:21 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 16:29:21 - Adding welcome page: class path resource [static/index.html]
+""2019-12-04 16:29:21 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40017e98, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e0294a7, org.springframework.security.web.header.HeaderWriterFilter@69069866, org.springframework.web.filter.CorsFilter@4fbe486c, org.springframework.security.web.authentication.logout.LogoutFilter@14dbfdb1, by.pstlabs.cognive.common.login.filter.JwtAuthenticationFilter@dbc7e0a, by.pstlabs.cognive.common.login.filter.JwtAuthorizationFilter@636fccb0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15cee630, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2335aef2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@28519bfb, org.springframework.security.web.session.SessionManagementFilter@64c95480, org.springframework.security.web.access.ExceptionTranslationFilter@a120b9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@563263a]
+""2019-12-04 16:29:21 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@e056f20: startup date [Wed Dec 04 16:28:54 MSK 2019]; root of context hierarchy
+""2019-12-04 16:29:21 - Detected @ExceptionHandler methods in exceptionController
+""2019-12-04 16:29:21 - Registering beans for JMX exposure on startup
+""2019-12-04 16:29:21 - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2019-12-04 16:29:21 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2019-12-04 16:29:21 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2019-12-04 16:29:21 - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+""2019-12-04 16:29:21 - Tomcat started on port(s): 8080 (http) with context path ''
+""2019-12-04 16:29:21 - Started Application in 27.733 seconds (JVM running for 28.096)
+""2019-12-04 16:29:21 - HHH000397: Using ASTQueryTranslatorFactory
+""2019-12-04 16:31:32 - Starting Application on aprybylski with PID 17148 (C:\Users\aprybylski\project\cognive-microservices\build\classes\java\main started by aprybylski in C:\Users\aprybylski\project\cognive-microservices)
+""2019-12-04 16:31:32 - No active profile set, falling back to default profiles: default
+""2019-12-04 16:31:32 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2667f029: startup date [Wed Dec 04 16:31:32 MSK 2019]; root of context hierarchy
+""2019-12-04 16:31:33 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-12-04 16:31:33 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d1dd3b21] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+""2019-12-04 16:31:33 - Tomcat initialized with port(s): 8080 (http)
+""2019-12-04 16:31:33 - Starting service [Tomcat]
+""2019-12-04 16:31:33 - Starting Servlet Engine: Apache Tomcat/8.5.34
+""2019-12-04 16:31:33 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_231\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;c:\Program Files\grade\gradle-6.0.1\bin\;C:\Users\aprybylski\AppData\Local\Microsoft\WindowsApps;C:\Users\aprybylski\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;;.]
+""2019-12-04 16:31:34 - Initializing Spring embedded WebApplicationContext
+""2019-12-04 16:31:34 - Root WebApplicationContext: initialization completed in 1584 ms
+""2019-12-04 16:31:34 - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-12-04 16:31:34 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-12-04 16:31:34 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+""2019-12-04 16:31:34 - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-12-04 16:31:34 - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-12-04 16:31:34 - Servlet dispatcherServlet mapped to [/]
+""2019-12-04 16:31:34 - HikariPool-1 - Starting...
+""2019-12-04 16:31:35 - HikariPool-1 - Driver does not support get/set network timeout for connections. (Метод org.postgresql.jdbc.PgConnection.getNetworkTimeout() ещё не реализован)
+""2019-12-04 16:31:35 - HikariPool-1 - Start completed.
+""2019-12-04 16:31:35 - Building JPA container EntityManagerFactory for persistence unit 'default'
+""2019-12-04 16:31:35 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+""2019-12-04 16:31:35 - HHH000412: Hibernate Core {5.2.17.Final}
+""2019-12-04 16:31:35 - HHH000206: hibernate.properties not found
+""2019-12-04 16:31:35 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+""2019-12-04 16:31:35 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+""2019-12-04 16:31:52 - HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+""2019-12-04 16:31:52 - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@403c3a01
+""2019-12-04 16:31:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2019-12-04 16:31:56 - An INFO Message
+""2019-12-04 16:31:56 - A WARN Message
+""2019-12-04 16:31:56 - An ERROR Message
+""2019-12-04 16:31:56 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 16:31:56 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2019-12-04 16:31:56 - Mapped "{[/notification/sendMail],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.NotificationController.sendMailTest(by.pstlabs.cognive.microservices.notifications.model.MailNotificationRequest)
+""2019-12-04 16:31:56 - Mapped "{[/api/push/all],methods=[GET]}" onto java.util.List<by.pstlabs.cognive.microservices.notifications.model.Push> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush()
+""2019-12-04 16:31:56 - Mapped "{[/api/push/AddList],methods=[POST]}" onto void by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String)
+""2019-12-04 16:31:56 - Mapped "{[/api/push/AddPushToUserName],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.util.Map<java.lang.String, java.lang.String>) throws java.text.ParseException,java.io.IOException
+""2019-12-04 16:31:56 - Mapped "{[/api/push/AddPushForAllUser],methods=[POST]}" onto org.springframework.http.ResponseEntity<java.lang.Object> by.pstlabs.cognive.microservices.notifications.controller.rest.PushController.addPush(java.lang.String,java.lang.String) throws java.text.ParseException
+""2019-12-04 16:31:56 - Mapped "{[/bot/send],methods=[GET]}" onto public void by.pstlabs.cognive.microservices.notifications.controller.rest.TelegramBotController.sendMessageTo(java.lang.String)
+""2019-12-04 16:31:56 - Mapped "{[/testException]}" onto public java.lang.String by.pstlabs.cognive.microservices.notifications.controller.rest.TestController.test(int)
+""2019-12-04 16:31:56 - Mapped "{[/banks/{bankId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Bank> by.pstlabs.cognive.microservices.userlist.controller.BankController.getBankById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:31:56 - Mapped "{[/banks],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Bank>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllBanks()
+""2019-12-04 16:31:56 - Mapped "{[/banks/{bankId}/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.BankController.getAllListsByBankId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:31:56 - Mapped "{[/lists/{listsId}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getListById(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:31:56 - Mapped "{[/lists/{listsId}/users],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.ListsController.addUserToList(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:31:56 - Mapped "{[/lists/{listsId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.updateLists(java.lang.Long,by.pstlabs.cognive.microservices.userlist.model.Lists) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:31:56 - Mapped "{[/lists],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.microservices.userlist.model.Lists>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllLists()
+""2019-12-04 16:31:56 - Mapped "{[/lists],methods=[POST]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.microservices.userlist.model.Lists> by.pstlabs.cognive.microservices.userlist.controller.ListsController.createLists(by.pstlabs.cognive.microservices.userlist.model.Lists)
+""2019-12-04 16:31:56 - Mapped "{[/lists/{listsId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteLists(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:31:56 - Mapped "{[/lists/{listsId}/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.ListsController.getAllUsersByListsId(java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:31:56 - Mapped "{[/lists/{listsId}/users/{userId}],methods=[DELETE]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.ListsController.deleteUserFromList(java.lang.Long,java.lang.Long) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:31:56 - Mapped "{[/api/users/{userId}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<by.pstlabs.cognive.common.model.User> by.pstlabs.cognive.microservices.userlist.controller.UserController.updateUser(java.lang.Long,by.pstlabs.cognive.common.model.User) throws by.pstlabs.cognive.common.exception.ResourceNotFoundException
+""2019-12-04 16:31:56 - Mapped "{[/api/users],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<by.pstlabs.cognive.common.model.User>> by.pstlabs.cognive.microservices.userlist.controller.UserController.getAllUsers()
+""2019-12-04 16:31:56 - Mapped "{[/api/users/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createUser(by.pstlabs.cognive.common.model.User) throws com.fasterxml.jackson.core.JsonProcessingException
+""2019-12-04 16:31:56 - Mapped "{[/api/roles],methods=[GET]}" onto public java.util.List<by.pstlabs.cognive.common.model.Role> by.pstlabs.cognive.microservices.userlist.controller.UserController.listRoles()
+""2019-12-04 16:31:56 - Mapped "{[/api/roles/create],methods=[POST]}" onto public org.springframework.http.HttpStatus by.pstlabs.cognive.microservices.userlist.controller.UserController.createRole(java.lang.String)
+""2019-12-04 16:31:56 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+""2019-12-04 16:31:56 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+""2019-12-04 16:31:56 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 16:31:56 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+""2019-12-04 16:31:56 - Adding welcome page: class path resource [static/index.html]
+""2019-12-04 16:31:56 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a3c99f1, org.springframework.security.web.context.SecurityContextPersistenceFilter@17136390, org.springframework.security.web.header.HeaderWriterFilter@503a7990, org.springframework.web.filter.CorsFilter@16b7e04a, org.springframework.security.web.authentication.logout.LogoutFilter@7b79ff1c, by.pstlabs.cognive.common.login.filter.JwtAuthenticationFilter@661db63e, by.pstlabs.cognive.common.login.filter.JwtAuthorizationFilter@5cf2f5d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f1d799, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@69069866, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@429f0ca8, org.springframework.security.web.session.SessionManagementFilter@6dcbbb49, org.springframework.security.web.access.ExceptionTranslationFilter@1cc93da4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1ff463bb]
+""2019-12-04 16:31:56 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2667f029: startup date [Wed Dec 04 16:31:32 MSK 2019]; root of context hierarchy
+""2019-12-04 16:31:56 - Detected @ExceptionHandler methods in exceptionController
+""2019-12-04 16:31:56 - Registering beans for JMX exposure on startup
+""2019-12-04 16:31:56 - Bean with name 'dataSource' has been autodetected for JMX exposure
+""2019-12-04 16:31:56 - Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+""2019-12-04 16:31:56 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+""2019-12-04 16:31:56 - No task executor bean found for async processing: no bean of type TaskExecutor and no bean named 'taskExecutor' either
+""2019-12-04 16:31:56 - Tomcat started on port(s): 8080 (http) with context path ''
+""2019-12-04 16:31:56 - Started Application in 24.456 seconds (JVM running for 24.808)
+""2019-12-04 16:31:56 - HHH000397: Using ASTQueryTranslatorFactory
 "
