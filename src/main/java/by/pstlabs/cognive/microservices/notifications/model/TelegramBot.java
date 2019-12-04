@@ -9,6 +9,7 @@ import by.pstlabs.cognive.microservices.notifications.service.TelegramBotService
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
 import by.pstlabs.cognive.microservices.userlist.service.UserService;
 import com.google.common.collect.Lists;
+import org.eclipse.jgit.api.errors.GitAPIException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     private TelegramBotService telegramBotService;
 
-    private static final String token  = "1044087270:AAHgw5xjjTeXzSV3jw5DRKoKPm9nuEvq1WQ";
+    private static final String token  = "997035524:AAECcWg7cBvJICrfIoUhoWkdAsPrzS03SW4";
     private static final String BIG_BOSS = "471858191";
 
     private Logger log = LoggerFactory.getLogger(TelegramBot.class);
@@ -78,7 +79,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         try {
             telegramBotService.checkUpdate(update);
-        } catch (AWTException | IOException e) {
+        } catch (AWTException | IOException | GitAPIException e) {
             e.printStackTrace();
         }
     }

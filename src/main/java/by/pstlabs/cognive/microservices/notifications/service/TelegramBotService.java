@@ -4,6 +4,13 @@ import by.pstlabs.cognive.common.model.User;
 import by.pstlabs.cognive.microservices.notifications.model.TelegramBot;
 import by.pstlabs.cognive.microservices.userlist.repository.UserRepository;
 import by.pstlabs.cognive.microservices.userlist.service.UserService;
+import com.github.sarxos.webcam.Webcam;
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.attributes.AttributesNodeProvider;
+import org.eclipse.jgit.lib.*;
+import org.eclipse.jgit.transport.CredentialsProvider;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.ApiContextInitializer;
@@ -13,7 +20,9 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -52,11 +61,12 @@ public class TelegramBotService{
         return bot;
     }
 
-    public void checkUpdate(Update update) throws AWTException, IOException {
+    public void checkUpdate(Update update) throws AWTException, IOException, GitAPIException {
+        String user = update.getMessage().getFrom().getId().toString();
         switch (update.getMessage().getText()) {
             case ("/listusers"): {
                 ArrayList<String> list = new ArrayList<String>();
-                userService.getAllUsers().forEach(user -> list.add(user.getName()));
+                userService.getAllUsers().forEach(_user -> list.add(_user.getName()));
                 bot.sendMsg(update.getMessage().getFrom().getId().toString(), list.toString());
                 log.info("Send listusers to "+update.getMessage().getFrom().getFirstName());
                 break;
@@ -64,8 +74,32 @@ public class TelegramBotService{
             case ("/screen"): {
                 System.setProperty("java.awt.headless", "false");
                 BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-                bot.sendImage("",image);
-                log.info("Send screensafe to "+update.getMessage().getFrom().getFirstName());
+                bot.sendImage(user,image);
+                log.info("Send screenshot to "+update.getMessage().getFrom().getFirstName());
+                break;
+            }
+            case ("/camerashot"):{
+                Webcam webcam = Webcam.getDefault();
+                webcam.open();
+                bot.sendImage(user,webcam.getImage());
+                webcam.close();
+                log.info("Send webcam screenshot to "+update.getMessage().getFrom().getFirstName());
+                break;
+            }
+            case ("/gitpush"):{
+                CredentialsProvider cp = new UsernamePasswordCredentialsProvider("mage-wow@mail.ru", "mage7313");
+//                Git git = Git.cloneRepository()
+//                        .setURI("https://dobriyby2@bitbucket.org/MTband/cognive-microservices.git")
+//                        .setBranch("dev")
+//                        .setCredentialsProvider(cp)
+//                        .setDirectory(new File("/path/to/repo"))
+//                        .call();
+                Git git = Git.open(new File(""));
+                git.checkout().setName("dev-local").call();
+                git.branchList().call().forEach(branch -> System.out.println(branch.getName()));
+                git.commit().setAuthor("Dobriy","mage-wow@mail.ru").setMessage("test commit").call();
+                git.push().setCredentialsProvider(cp).call();
+
                 break;
             }
             default:

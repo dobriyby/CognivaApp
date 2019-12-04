@@ -40,6 +40,10 @@ dependencies {
 
     compile group: 'org.telegram', name: 'telegrambots', version: '4.4.0.2'
 
+    implementation 'com.github.sarxos:webcam-capture:0.3.10'
+
+    compile 'org.eclipse.jgit:org.eclipse.jgit:5.5.1.201910021850-r'
+
 
 
 
