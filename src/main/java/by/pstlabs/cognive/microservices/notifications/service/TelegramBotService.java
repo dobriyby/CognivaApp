@@ -96,7 +96,6 @@ public class TelegramBotService{
             case ("/camerashot"):{
                 Webcam webcam = Webcam.getDefault();
                 webcam.open();
-                System.out.println("test3");
                 bot.sendImage(user,webcam.getImage());
                 webcam.close();
                 log.info("Send webcam screenshot to "+update.getMessage().getFrom().getFirstName());
