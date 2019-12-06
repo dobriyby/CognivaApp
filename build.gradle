@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':webapp')
+//    implementation project(':webapp')
     implementation group: 'org.springframework.boot',   name: 'spring-boot-dependencies',       version: '2.0.5.RELEASE'
     implementation group: 'org.springframework.boot',   name: 'spring-boot-starter-web'
     implementation group: 'org.springframework.data',   name: 'spring-data-commons'
