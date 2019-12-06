@@ -9,20 +9,20 @@ import java.util.List;
 
 public abstract class BaseService <T extends BaseEntity> {
 
-//    @Autowired
-//    protected JpaRepository<T, Long> repository;
+    @Autowired
+    protected JpaRepository<T, Long> repository;
 
-//    public List<T> findAll(){
-//        return repository.findAll();
-//    }
-//
-//    public T findById(Long id) throws ResourceNotFoundException {
-//        return repository.findById(id)
-//                .orElseThrow(() -> new ResourceNotFoundException(id));
-//    }
-//
-//    public T create(T entity){
-//        return repository.save(entity);
-//    }
+    public List<T> findAll(){
+        return repository.findAll();
+    }
+
+    public T findById(Long id) throws ResourceNotFoundException {
+        return repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(id));
+    }
+
+    public T create(T entity){
+        return repository.save(entity);
+    }
 
 }
